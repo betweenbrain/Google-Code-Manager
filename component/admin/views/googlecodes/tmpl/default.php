@@ -27,7 +27,7 @@
 				<th>
 					<?php echo JText::_('Code'); ?>
 				</th>
-				<th>
+				<th width="62">
 					<?php echo JText::_('Published'); ?>
 				</th>
 				<th>

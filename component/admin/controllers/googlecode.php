@@ -22,6 +22,7 @@ class GooglecodesControllerGooglecode extends GooglecodesController
 
 		// Register Extra tasks
 		$this->registerTask('add', 'edit');
+		$this->registerTask('unpublish', 'publish');
 	}
 
 	/**
@@ -36,6 +37,43 @@ class GooglecodesControllerGooglecode extends GooglecodesController
 		JRequest::setVar('hidemainmenu', 1);
 
 		parent::display();
+	}
+
+	/**
+	 * Set publish state of Google code from list view
+	 */
+	function publish()
+	{
+		// Check for request forgeries
+		// JRequest::checkToken() or jexit( 'Invalid Token' );
+
+		$this->setRedirect('index.php?option=com_googlecodemanager');
+
+		// Initialize variables
+		$db      =& JFactory::getDBO();
+		$user    =& JFactory::getUser();
+		$cid     = JRequest::getVar('cid', array(), 'post', 'array');
+		$task    = JRequest::getCmd('task');
+		$publish = ($task == 'publish');
+		$n       = count($cid);
+
+		if (empty($cid))
+		{
+			return JError::raiseWarning(500, JText::_('No items selected'));
+		}
+
+		JArrayHelper::toInteger($cid);
+		$cids = implode(',', $cid);
+
+		$query = 'UPDATE #__google_codes'
+			. ' SET published = ' . (int) $publish
+			. ' WHERE id IN ( ' . $cids . '  )';
+		$db->setQuery($query);
+		if (!$db->query())
+		{
+			return JError::raiseWarning(500, $db->getError());
+		}
+		$this->setMessage(JText::sprintf($publish ? 'Items published' : 'Items unpublished', $n));
 	}
 
 	/**
