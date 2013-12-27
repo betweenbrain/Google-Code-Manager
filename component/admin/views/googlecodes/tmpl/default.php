@@ -15,7 +15,8 @@
 			<thead>
 			<tr>
 				<th width="20">
-					<input type="checkbox" name="toggle" value="" onclick="checkAll(<?php echo count($this->items); ?>);" />
+					<input type="checkbox" name="toggle" value=""
+					       onclick="checkAll(<?php echo count($this->items); ?>);"/>
 				</th>
 				<th width="5">
 					<?php echo JText::_('ID'); ?>
@@ -25,6 +26,9 @@
 				</th>
 				<th>
 					<?php echo JText::_('Code'); ?>
+				</th>
+				<th>
+					<?php echo JText::_('Published'); ?>
 				</th>
 				<th>
 					<?php echo JText::_('Start Date'); ?>
@@ -59,6 +63,9 @@
 						<?php echo $row->code; ?>
 					</td>
 					<td>
+						<?php echo JHtml::_('grid.published', $row, $i); ?>
+					</td>
+					<td>
 						<?php echo $row->publish_up; ?>
 					</td>
 					<td>
@@ -72,9 +79,9 @@
 		</table>
 	</div>
 
-	<input type="hidden" name="option" value="com_googlecodemanager" />
-	<input type="hidden" name="task" value="" />
-	<input type="hidden" name="boxchecked" value="0" />
-	<input type="hidden" name="controller" value="googlecode" />
+	<input type="hidden" name="option" value="com_googlecodemanager"/>
+	<input type="hidden" name="task" value=""/>
+	<input type="hidden" name="boxchecked" value="0"/>
+	<input type="hidden" name="controller" value="googlecode"/>
 
 </form>
