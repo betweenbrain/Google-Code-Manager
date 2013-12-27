@@ -11,16 +11,10 @@
 
 jimport('joomla.application.component.view');
 
-/**
- * Hellos View
- *
- * @package    Joomla.Tutorials
- * @subpackage Components
- */
 class GooglecodesViewGooglecodes extends JView
 {
 	/**
-	 * Hellos view display method
+	 * Google codes view display method
 	 *
 	 * @return void
 	 **/

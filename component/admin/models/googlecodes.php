@@ -11,12 +11,6 @@
 
 jimport('joomla.application.component.model');
 
-/**
- * Hello Model
- *
- * @package    Joomla.Tutorials
- * @subpackage Components
- */
 class GooglecodesModelGooglecodes extends JModel
 {
 	/**
