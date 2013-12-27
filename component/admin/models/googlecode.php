@@ -52,7 +52,10 @@ class GooglecodesModelGooglecode extends JModel
 	}
 
 	/**
-	 * Method to get a hello
+	 * Method to get a Google code
+	 *
+	 * if !$this->_data sets default state of new item
+	 * (e.g. $this->_data->published = 1 sets default published state)
 	 *
 	 * @return object with data
 	 */
@@ -129,7 +132,7 @@ class GooglecodesModelGooglecode extends JModel
 		 * Make sure the Google code record is valid
 		 *
 		 * JTable/check();
-		 * can be overridden in our TableHello class
+		 * can be overridden in our TableGooglecode class
 		 */
 		if (!$row->check())
 		{
