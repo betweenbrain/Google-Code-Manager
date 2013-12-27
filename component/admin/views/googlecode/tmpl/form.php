@@ -66,7 +66,7 @@ JHTML::_('behavior.formvalidation');
 						</label>
 					</td>
 					<td>
-						<?php echo JHTML::_('select.booleanlist', 'publishCode', '', $this->googlecode->published); ?>
+						<?php echo JHTML::_('select.booleanlist', 'published', null, $this->googlecode->published); ?>
 					</td>
 				</tr>
 				<tr>
