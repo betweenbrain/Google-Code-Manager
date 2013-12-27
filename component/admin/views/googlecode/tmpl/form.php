@@ -46,7 +46,7 @@ JHTML::_('behavior.formvalidation');
 						</label>
 					</td>
 					<td>
-						<input class="text_area required" type="text" name="url" id="url" size="32" maxlength="250" value="<?php echo $this->googlecode->url; ?>" />
+						<input class="text_area required" type="text" name="url" id="url" size="96" maxlength="250" value="<?php echo $this->googlecode->url; ?>" />
 					</td>
 				</tr>
 				<tr>
