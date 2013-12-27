@@ -61,6 +61,16 @@ JHTML::_('behavior.formvalidation');
 				</tr>
 				<tr>
 					<td width="100" align="right" class="key">
+						<label for="code">
+							<?php echo JText::_('Published'); ?>:
+						</label>
+					</td>
+					<td>
+						<?php echo JHTML::_('select.booleanlist', 'publishCode', '', $this->googlecode->published); ?>
+					</td>
+				</tr>
+				<tr>
+					<td width="100" align="right" class="key">
 						<label for="publish_up">
 							<?php echo JText::_('Start Date'); ?>:
 						</label>
