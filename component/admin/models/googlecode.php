@@ -28,19 +28,27 @@ class GooglecodesModelGooglecode extends JModel
 	}
 
 	/**
-	 * Method to set the Google code identifier
+	 * Method to delete record(s)
 	 *
 	 * @access    public
-	 *
-	 * @param    int Google code identifier
-	 *
-	 * @return    void
+	 * @return    boolean    True on success
 	 */
-	function setId($id)
+	function delete()
 	{
-		// Set id and wipe data
-		$this->_id   = $id;
-		$this->_data = null;
+		$cids = JRequest::getVar('cid', array(0), 'post', 'array');
+		$row  =& $this->getTable();
+
+		foreach ($cids as $cid)
+		{
+			if (!$row->delete($cid))
+			{
+				$this->setError($row->getErrorMsg());
+
+				return false;
+			}
+		}
+
+		return true;
 	}
 
 	/**
@@ -74,6 +82,22 @@ class GooglecodesModelGooglecode extends JModel
 	}
 
 	/**
+	 * Method to set the Google code identifier
+	 *
+	 * @access    public
+	 *
+	 * @param    int Google code identifier
+	 *
+	 * @return    void
+	 */
+	function setId($id)
+	{
+		// Set id and wipe data
+		$this->_id   = $id;
+		$this->_data = null;
+	}
+
+	/**
 	 * Method to store a record
 	 *
 	 * @access    public
@@ -88,7 +112,7 @@ class GooglecodesModelGooglecode extends JModel
 		$data = JRequest::get('post');
 
 		/**
-		 * Bind the form fields to the hello table
+		 * Bind the form fields to the Googlecodes table
 		 *
 		 * JTable/bind($from, $ignore=array());
 		 *
@@ -102,7 +126,7 @@ class GooglecodesModelGooglecode extends JModel
 		}
 
 		/**
-		 * Make sure the hello record is valid
+		 * Make sure the Google code record is valid
 		 *
 		 * JTable/check();
 		 * can be overridden in our TableHello class
@@ -125,30 +149,6 @@ class GooglecodesModelGooglecode extends JModel
 			$this->setError($this->_db->getErrorMsg());
 
 			return false;
-		}
-
-		return true;
-	}
-
-	/**
-	 * Method to delete record(s)
-	 *
-	 * @access    public
-	 * @return    boolean    True on success
-	 */
-	function delete()
-	{
-		$cids = JRequest::getVar('cid', array(0), 'post', 'array');
-		$row  =& $this->getTable();
-
-		foreach ($cids as $cid)
-		{
-			if (!$row->delete($cid))
-			{
-				$this->setError($row->getErrorMsg());
-
-				return false;
-			}
 		}
 
 		return true;

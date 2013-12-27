@@ -26,6 +26,17 @@ class GooglecodesControllerGooglecode extends GooglecodesController
 	}
 
 	/**
+	 * cancel editing a record
+	 *
+	 * @return void
+	 */
+	function cancel()
+	{
+		$msg = JText::_('Operation Cancelled');
+		$this->setRedirect('index.php?option=com_googlecodemanager', $msg);
+	}
+
+	/**
 	 * display the edit form
 	 *
 	 * @return void
@@ -51,7 +62,6 @@ class GooglecodesControllerGooglecode extends GooglecodesController
 
 		// Initialize variables
 		$db      =& JFactory::getDBO();
-		$user    =& JFactory::getUser();
 		$cid     = JRequest::getVar('cid', array(), 'post', 'array');
 		$task    = JRequest::getCmd('task');
 		$publish = ($task == 'publish');
@@ -77,6 +87,26 @@ class GooglecodesControllerGooglecode extends GooglecodesController
 	}
 
 	/**
+	 * remove record(s)
+	 *
+	 * @return void
+	 */
+	function remove()
+	{
+		$model = $this->getModel('googlecode');
+		if (!$model->delete())
+		{
+			$msg = JText::_('Error: One or More Google Codes Could not be Deleted');
+		}
+		else
+		{
+			$msg = JText::_('Google Code(s) Deleted');
+		}
+
+		$this->setRedirect('index.php?option=com_googlecodemanager', $msg);
+	}
+
+	/**
 	 * save a record (and redirect to main page)
 	 *
 	 * @return void
@@ -98,36 +128,4 @@ class GooglecodesControllerGooglecode extends GooglecodesController
 		$link = 'index.php?option=com_googlecodemanager';
 		$this->setRedirect($link, $msg);
 	}
-
-	/**
-	 * remove record(s)
-	 *
-	 * @return void
-	 */
-	function remove()
-	{
-		$model = $this->getModel('googlecode');
-		if (!$model->delete())
-		{
-			$msg = JText::_('Error: One or More Google Codes Could not be Deleted');
-		}
-		else
-		{
-			$msg = JText::_('Google Code(s) Deleted');
-		}
-
-		$this->setRedirect('index.php?option=com_googlecodemanager', $msg);
-	}
-
-	/**
-	 * cancel editing a record
-	 *
-	 * @return void
-	 */
-	function cancel()
-	{
-		$msg = JText::_('Operation Cancelled');
-		$this->setRedirect('index.php?option=com_googlecodemanager', $msg);
-	}
-
 }
