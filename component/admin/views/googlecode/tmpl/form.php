@@ -52,7 +52,7 @@ JHTML::_('behavior.formvalidation');
 				<tr>
 					<td width="100" align="right" class="key">
 						<label for="code">
-							<?php echo JText::_('Google code'); ?>:
+							<?php echo JText::_('Google Code'); ?>:
 						</label>
 					</td>
 					<td>
