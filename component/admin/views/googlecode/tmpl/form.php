@@ -15,17 +15,22 @@ JHTML::_('behavior.formvalidation');
 	function submitbutton(pressbutton) {
 		var form = document.adminForm;
 		if (pressbutton == 'cancel') {
-			submitform( pressbutton );
+			submitform(pressbutton);
 			return;
 		}
 
 		// do field validation
-		if (form.url.value) == "") {
-			alert( "<?php echo JText::_( 'You must provide a URL.', true ); ?>" );
-		} else if (form.code.value == "") {
-			alert( "<?php echo JText::_( 'You must provide a code.', true ); ?>" );
+		if (form.url.value) ==
+		""
+	)
+		{
+			alert("<?php echo JText::_( 'You must provide a URL.', TRUE ); ?>");
+		}
+	else
+		if (form.code.value == "") {
+			alert("<?php echo JText::_( 'You must provide a code.', TRUE ); ?>");
 		} else {
-			submitform( pressbutton );
+			submitform(pressbutton);
 		}
 	}
 </script>
@@ -61,7 +66,7 @@ JHTML::_('behavior.formvalidation');
 						</label>
 					</td>
 					<td>
-						<input class="text_area" type="calendar" name="publish_up" id="publish_up" size="32" maxlength="250" value="<?php echo $this->googlecode->publish_up; ?>" />
+						<?php echo JHTML::calendar($this->googlecode->publish_up, 'publish_up', 'publish_up', $format = '%Y-%m-%d %H:%M:%S', $attribs = NULL) ?>
 					</td>
 					<td width="100" align="right" class="key">
 						<label for="publish_down">
@@ -69,7 +74,7 @@ JHTML::_('behavior.formvalidation');
 						</label>
 					</td>
 					<td>
-						<input class="text_area" type="calendar" name="publish_down" id="publish_down" size="32" maxlength="250" value="<?php echo $this->googlecode->publish_down; ?>" />
+						<?php echo JHTML::calendar($this->googlecode->publish_down, 'publish_down', 'publish_down', $format = '%Y-%m-%d %H:%M:%S', $attribs = NULL) ?>
 					</td>
 				</tr>
 			</table>
