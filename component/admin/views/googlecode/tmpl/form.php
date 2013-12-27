@@ -68,6 +68,8 @@ JHTML::_('behavior.formvalidation');
 					<td>
 						<?php echo JHTML::calendar($this->googlecode->publish_up, 'publish_up', 'publish_up', $format = '%Y-%m-%d %H:%M:%S', $attribs = NULL) ?>
 					</td>
+				</tr>
+				<tr>
 					<td width="100" align="right" class="key">
 						<label for="publish_down">
 							<?php echo JText::_('End Date'); ?>:
