@@ -31,6 +31,11 @@ class TableGooglecode extends JTable
 	/**
 	 * @var string
 	 */
+	var $published = 0;
+
+	/**
+	 * @var string
+	 */
 	var $publish_up = null;
 
 	/**
