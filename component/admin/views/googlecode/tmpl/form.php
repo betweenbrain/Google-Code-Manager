@@ -20,15 +20,11 @@ JHTML::_('behavior.formvalidation');
 		}
 
 		// do field validation
-		if (form.url.value) ==
-		""
-	)
-		{
-			alert("<?php echo JText::_( 'You must provide a URL.', TRUE ); ?>");
+		if (form.url.value == "") {
+			alert("<?php echo JText::_( 'You must provide a URL.', true ); ?>");
 		}
-	else
-		if (form.code.value == "") {
-			alert("<?php echo JText::_( 'You must provide a code.', TRUE ); ?>");
+		else if (form.code.value == "") {
+			alert("<?php echo JText::_( 'You must provide a code.', true ); ?>");
 		} else {
 			submitform(pressbutton);
 		}
@@ -76,7 +72,7 @@ JHTML::_('behavior.formvalidation');
 						</label>
 					</td>
 					<td>
-						<?php echo JHTML::calendar($this->googlecode->publish_up, 'publish_up', 'publish_up', $format = '%Y-%m-%d %H:%M:%S', $attribs = NULL) ?>
+						<?php echo JHTML::calendar($this->googlecode->publish_up, 'publish_up', 'publish_up', $format = '%Y-%m-%d %H:%M:%S', $attribs = null) ?>
 					</td>
 				</tr>
 				<tr>
@@ -86,7 +82,7 @@ JHTML::_('behavior.formvalidation');
 						</label>
 					</td>
 					<td>
-						<?php echo JHTML::calendar($this->googlecode->publish_down, 'publish_down', 'publish_down', $format = '%Y-%m-%d %H:%M:%S', $attribs = NULL) ?>
+						<?php echo JHTML::calendar($this->googlecode->publish_down, 'publish_down', 'publish_down', $format = '%Y-%m-%d %H:%M:%S', $attribs = null) ?>
 					</td>
 				</tr>
 			</table>
