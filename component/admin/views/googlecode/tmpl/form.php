@@ -11,22 +11,26 @@
 
 JHTML::_('behavior.formvalidation');
 ?>
-<script language="javascript" type="text/javascript">
+<script type="text/javascript">
 	function submitbutton(pressbutton) {
-		var form = document.adminForm;
 		if (pressbutton == 'cancel') {
 			submitform(pressbutton);
-			return;
-		}
-
-		// do field validation
-		if (form.url.value == "") {
-			alert("<?php echo JText::_( 'You must provide a URL.', true ); ?>");
-		}
-		else if (form.code.value == "") {
-			alert("<?php echo JText::_( 'You must provide a code.', true ); ?>");
 		} else {
-			submitform(pressbutton);
+			var f = document.adminForm;
+			if (document.formvalidator.isValid(f)) {
+				f.check.value = '<?php echo JUtility::getToken(); ?>'; //send token
+				submitform(pressbutton);
+			}
+			else {
+				var msg = new Array();
+				if ($('url').hasClass('invalid')) {
+					msg.push('<?php echo JText::_( 'You must provide a URL.', true ); ?>');
+				}
+				if ($('code').hasClass('invalid')) {
+					msg.push('<?php echo JText::_( 'You must provide a code.', true ); ?>');
+				}
+				alert(msg.join('\n'));
+			}
 		}
 	}
 </script>
