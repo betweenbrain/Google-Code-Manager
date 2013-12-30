@@ -1,7 +1,7 @@
 <?php defined('_JEXEC') or die;
 
 /**
- * File       googlecodes.php
+ * File       pagecodes.php
  * Created    12/26/13 4:31 PM
  * Author     Matt Thomas | matt@betweenbrain.com | http://betweenbrain.com
  * Support    https://github.com/betweenbrain/
@@ -11,10 +11,10 @@
 
 jimport('joomla.application.component.model');
 
-class GooglecodesModelGooglecodes extends JModel
+class PagecodesModelPagecodes extends JModel
 {
 	/**
-	 * Google code data array
+	 * Page code data array
 	 *
 	 * @var array
 	 */
@@ -28,13 +28,13 @@ class GooglecodesModelGooglecodes extends JModel
 	function _buildQuery()
 	{
 		$query = ' SELECT * '
-			. ' FROM #__google_codes ';
+			. ' FROM #__page_code_urls ';
 
 		return $query;
 	}
 
 	/**
-	 * Retrieves the Google code data
+	 * Retrieves the Page code data
 	 *
 	 * @return array Array of objects containing the data from the database
 	 */

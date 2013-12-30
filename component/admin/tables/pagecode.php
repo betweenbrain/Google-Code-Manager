@@ -1,7 +1,7 @@
 <?php defined('_JEXEC') or die;
 
 /**
- * File       googlecode.php
+ * File       pagecode.php
  * Created    12/26/13 5:04 PM
  * Author     Matt Thomas | matt@betweenbrain.com | http://betweenbrain.com
  * Support    https://github.com/betweenbrain/
@@ -9,7 +9,7 @@
  * License    GNU GPL v3 or later
  */
 
-class TableGooglecode extends JTable
+class TablePagecode extends JTable
 {
 	/**
 	 * Primary Key
@@ -50,6 +50,6 @@ class TableGooglecode extends JTable
 	 */
 	function __construct(&$db)
 	{
-		parent::__construct('#__google_codes', 'id', $db);
+		parent::__construct('#__page_code_urls', 'id', $db);
 	}
 }

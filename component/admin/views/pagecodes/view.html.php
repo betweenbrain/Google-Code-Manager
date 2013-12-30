@@ -11,16 +11,16 @@
 
 jimport('joomla.application.component.view');
 
-class GooglecodesViewGooglecodes extends JView
+class PagecodesViewPagecodes extends JView
 {
 	/**
-	 * Google codes view display method
+	 * Page codes view display method
 	 *
 	 * @return void
 	 **/
 	function display($tpl = null)
 	{
-		JToolBarHelper::title(JText::_('Google Code Manager'), 'generic.png');
+		JToolBarHelper::title(JText::_('Page Code Manager'), 'generic.png');
 		JToolBarHelper::deleteList();
 		JToolBarHelper::editListX();
 		JToolBarHelper::addNewX();

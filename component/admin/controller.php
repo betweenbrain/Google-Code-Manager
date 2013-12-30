@@ -11,7 +11,7 @@
 
 jimport('joomla.application.component.controller');
 
-class GooglecodesController extends JController
+class PagecodesController extends JController
 {
 	/**
 	 * Method to display the view

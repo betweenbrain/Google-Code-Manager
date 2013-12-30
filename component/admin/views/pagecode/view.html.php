@@ -11,21 +11,21 @@
 
 jimport('joomla.application.component.view');
 
-class GooglecodesViewGooglecode extends JView
+class PagecodesViewPagecode extends JView
 {
 	/**
-	 * display method of Google code view
+	 * display method of Page code view
 	 *
 	 * @return void
 	 **/
 	function display($tpl = null)
 	{
 
-		$googlecode =& $this->get('Data');
-		$isNew      = ($googlecode->id < 1);
+		$pagecode =& $this->get('Data');
+		$isNew      = ($pagecode->id < 1);
 
 		$text = $isNew ? JText::_('New') : JText::_('Edit');
-		JToolBarHelper::title(JText::_('Google code') . ': <small><small>[ ' . $text . ' ]</small></small>');
+		JToolBarHelper::title(JText::_('Page code') . ': <small><small>[ ' . $text . ' ]</small></small>');
 		JToolBarHelper::save();
 		if ($isNew)
 		{
@@ -37,7 +37,7 @@ class GooglecodesViewGooglecode extends JView
 			JToolBarHelper::cancel('cancel', 'Close');
 		}
 
-		$this->assignRef('googlecode', $googlecode);
+		$this->assignRef('pagecode', $pagecode);
 
 		parent::display($tpl);
 	}

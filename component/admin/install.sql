@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS `#__google_codes` (
+CREATE TABLE IF NOT EXISTS `#__page_code_urls` (
   `id` int(11) unsigned NOT NULL auto_increment,
   `url` text NOT NULL,
   `code` text NOT NULL,

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install type="component"
+         version="1.5"
+         method="upgrade">
+	<name>Page Code Manager</name>
+	<version>1.01</version>
+	<description>Description of the component ...</description>
+
+	<install>
+		<sql>
+			<file charset="utf8" driver="mysql">install.sql</file>
+		</sql>
+	</install>
+	<uninstall>
+		<sql>
+			<file charset="utf8" driver="mysql">uninstall.sql</file>
+		</sql>
+	</uninstall>
+
+	<administration>
+		<!-- Administration Menu Section -->
+		<menu>Page Code Manager</menu>
+		<submenu>
+		<menu link="option=com_pagecodemanager">URL List</menu>
+		<menu link="option=com_pagecodemanager&amp;controller=pagecode&amp;task=edit">Add New URL</menu>
+		<menu link="option=com_pagecodemanager">Codes</menu>
+		</submenu>
+
+		<!-- Administration Main File Copy Section -->
+		<files folder="admin">
+			<filename>controller.php</filename>
+			<filename>pagecodemanager.php</filename>
+			<filename>install.sql</filename>
+			<filename>uninstall.sql</filename>
+			<filename>controllers/pagecode.php</filename>
+			<filename>models/pagecode.php</filename>
+			<filename>models/pagecodes.php</filename>
+			<filename>tables/pagecode.php</filename>
+			<filename>views/pagecode/view.html.php</filename>
+			<filename>views/pagecode/tmpl/form.php</filename>
+			<filename>views/pagecodes/view.html.php</filename>
+			<filename>views/pagecodes/tmpl/default.php</filename>
+		</files>
+
+	</administration>
+</install>

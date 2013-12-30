@@ -1,1 +1,1 @@
-DROP TABLE IF EXISTS `#__google_codes`;
+DROP TABLE IF EXISTS `#__page_code_urls`;

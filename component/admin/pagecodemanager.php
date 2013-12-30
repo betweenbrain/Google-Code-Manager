@@ -1,7 +1,7 @@
 <?php defined('_JEXEC') or die;
 
 /**
- * File       googlecodemanager.php
+ * File       pagecodemanager.php
  * Created    12/26/13 4:26 PM
  * Author     Matt Thomas | matt@betweenbrain.com | http://betweenbrain.com
  * Support    https://github.com/betweenbrain/
@@ -26,7 +26,7 @@ if ($controller = JRequest::getWord('controller'))
 }
 
 // Create the controller
-$classname  = 'GooglecodesController' . $controller;
+$classname  = 'PagecodesController' . $controller;
 $controller = new $classname();
 
 // Perform the Request task

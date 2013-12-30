@@ -45,7 +45,7 @@
 			{
 				$i++;
 				$checked = JHTML::_('grid.id', $i, $row->id);
-				$link    = JRoute::_('index.php?option=com_googlecodemanager&controller=googlecode&task=edit&cid[]=' . $row->id);
+				$link    = JRoute::_('index.php?option=com_pagecodemanager&controller=pagecode&task=edit&cid[]=' . $row->id);
 				?>
 				<tr class="<?php echo "row" . $k; ?>">
 					<td>
@@ -79,9 +79,9 @@
 		</table>
 	</div>
 
-	<input type="hidden" name="option" value="com_googlecodemanager"/>
+	<input type="hidden" name="option" value="com_pagecodemanager"/>
 	<input type="hidden" name="task" value=""/>
 	<input type="hidden" name="boxchecked" value="0"/>
-	<input type="hidden" name="controller" value="googlecode"/>
+	<input type="hidden" name="controller" value="pagecode"/>
 
 </form>

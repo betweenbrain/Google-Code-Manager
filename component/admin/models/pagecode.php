@@ -1,7 +1,7 @@
 <?php defined('_JEXEC') or die;
 
 /**
- * File       googlecode.php
+ * File       pagecode.php
  * Created    12/26/13 3:56 PM
  * Author     Matt Thomas | matt@betweenbrain.com | http://betweenbrain.com
  * Support    https://github.com/betweenbrain/
@@ -9,7 +9,7 @@
  * License    GNU GPL v3 or later
  */
 
-class GooglecodesModelGooglecode extends JModel
+class PagecodesModelPagecode extends JModel
 {
 
 	/**
@@ -52,7 +52,7 @@ class GooglecodesModelGooglecode extends JModel
 	}
 
 	/**
-	 * Method to get a Google code
+	 * Method to get a Page code
 	 *
 	 * if !$this->_data sets default state of new item
 	 * (e.g. $this->_data->published = 1 sets default published state)
@@ -65,7 +65,7 @@ class GooglecodesModelGooglecode extends JModel
 		// Load the data
 		if (empty($this->_data))
 		{
-			$query = ' SELECT * FROM #__google_codes ' .
+			$query = ' SELECT * FROM #__page_code_urls ' .
 				'  WHERE id = ' . $this->_id;
 			$this->_db->setQuery($query);
 			$this->_data = $this->_db->loadObject();
@@ -85,11 +85,11 @@ class GooglecodesModelGooglecode extends JModel
 	}
 
 	/**
-	 * Method to set the Google code identifier
+	 * Method to set the Page code identifier
 	 *
 	 * @access    public
 	 *
-	 * @param    int Google code identifier
+	 * @param    int Page code identifier
 	 *
 	 * @return    void
 	 */
@@ -115,7 +115,7 @@ class GooglecodesModelGooglecode extends JModel
 		$data = JRequest::get('post');
 
 		/**
-		 * Bind the form fields to the Googlecodes table
+		 * Bind the form fields to the Pagecodes table
 		 *
 		 * JTable/bind($from, $ignore=array());
 		 *
@@ -129,10 +129,10 @@ class GooglecodesModelGooglecode extends JModel
 		}
 
 		/**
-		 * Make sure the Google code record is valid
+		 * Make sure the Page code record is valid
 		 *
 		 * JTable/check();
-		 * can be overridden in our TableGooglecode class
+		 * can be overridden in our TablePagecode class
 		 */
 		if (!$row->check())
 		{

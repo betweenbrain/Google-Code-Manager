@@ -1,7 +1,7 @@
 <?php defined('_JEXEC') or die;
 
 /**
- * File       googlecode.php
+ * File       pagecode.php
  * Created    12/26/13 4:56 PM
  * Author     Matt Thomas | matt@betweenbrain.com | http://betweenbrain.com
  * Support    https://github.com/betweenbrain/
@@ -9,7 +9,7 @@
  * License    GNU GPL v3 or later
  */
 
-class GooglecodesControllerGooglecode extends GooglecodesController
+class PagecodesControllerPagecode extends PagecodesController
 {
 	/**
 	 * constructor (registers additional tasks to methods)
@@ -33,7 +33,7 @@ class GooglecodesControllerGooglecode extends GooglecodesController
 	function cancel()
 	{
 		$msg = JText::_('Operation Cancelled');
-		$this->setRedirect('index.php?option=com_googlecodemanager', $msg);
+		$this->setRedirect('index.php?option=com_pagecodemanager', $msg);
 	}
 
 	/**
@@ -43,7 +43,7 @@ class GooglecodesControllerGooglecode extends GooglecodesController
 	 */
 	function edit()
 	{
-		JRequest::setVar('view', 'googlecode');
+		JRequest::setVar('view', 'pagecode');
 		JRequest::setVar('layout', 'form');
 		JRequest::setVar('hidemainmenu', 1);
 
@@ -51,14 +51,14 @@ class GooglecodesControllerGooglecode extends GooglecodesController
 	}
 
 	/**
-	 * Set publish state of Google code from list view
+	 * Set publish state of Page code from list view
 	 */
 	function publish()
 	{
 		// Check for request forgeries
 		// JRequest::checkToken() or jexit( 'Invalid Token' );
 
-		$this->setRedirect('index.php?option=com_googlecodemanager');
+		$this->setRedirect('index.php?option=com_pagecodemanager');
 
 		// Initialize variables
 		$db      =& JFactory::getDBO();
@@ -75,7 +75,7 @@ class GooglecodesControllerGooglecode extends GooglecodesController
 		JArrayHelper::toInteger($cid);
 		$cids = implode(',', $cid);
 
-		$query = 'UPDATE #__google_codes'
+		$query = 'UPDATE #__page_code_urls'
 			. ' SET published = ' . (int) $publish
 			. ' WHERE id IN ( ' . $cids . '  )';
 		$db->setQuery($query);
@@ -93,17 +93,17 @@ class GooglecodesControllerGooglecode extends GooglecodesController
 	 */
 	function remove()
 	{
-		$model = $this->getModel('googlecode');
+		$model = $this->getModel('pagecode');
 		if (!$model->delete())
 		{
-			$msg = JText::_('Error: One or More Google Codes Could not be Deleted');
+			$msg = JText::_('Error: One or More Page Codes Could not be Deleted');
 		}
 		else
 		{
-			$msg = JText::_('Google Code(s) Deleted');
+			$msg = JText::_('Page Code(s) Deleted');
 		}
 
-		$this->setRedirect('index.php?option=com_googlecodemanager', $msg);
+		$this->setRedirect('index.php?option=com_pagecodemanager', $msg);
 	}
 
 	/**
@@ -113,19 +113,19 @@ class GooglecodesControllerGooglecode extends GooglecodesController
 	 */
 	function save()
 	{
-		$model = $this->getModel('googlecode');
+		$model = $this->getModel('pagecode');
 
 		if ($model->store())
 		{
-			$msg = JText::_('Google Code Saved');
+			$msg = JText::_('Page Code Saved');
 		}
 		else
 		{
-			$msg = JText::_('Error Saving Google Code');
+			$msg = JText::_('Error Saving Page Code');
 		}
 
 		// Check the table in so it can be edited.... we are done with it anyway
-		$link = 'index.php?option=com_googlecodemanager';
+		$link = 'index.php?option=com_pagecodemanager';
 		$this->setRedirect($link, $msg);
 	}
 }

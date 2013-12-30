@@ -42,17 +42,17 @@ JHTML::_('behavior.formvalidation');
 						</label>
 					</td>
 					<td>
-						<input class="text_area required" type="text" name="url" id="url" size="96" maxlength="250" value="<?php echo $this->googlecode->url; ?>" />
+						<input class="text_area required" type="text" name="url" id="url" size="96" maxlength="250" value="<?php echo $this->pagecode->url; ?>" />
 					</td>
 				</tr>
 				<tr>
 					<td width="100" align="right" class="key">
 						<label for="code">
-							<?php echo JText::_('Google Code'); ?>:
+							<?php echo JText::_('Page Code'); ?>:
 						</label>
 					</td>
 					<td>
-						<input class="text_area required" type="text" name="code" id="code" size="32" maxlength="250" value="<?php echo $this->googlecode->code; ?>" />
+						<input class="text_area required" type="text" name="code" id="code" size="32" maxlength="250" value="<?php echo $this->pagecode->code; ?>" />
 					</td>
 				</tr>
 				<tr>
@@ -62,7 +62,7 @@ JHTML::_('behavior.formvalidation');
 						</label>
 					</td>
 					<td>
-						<?php echo JHTML::_('select.booleanlist', 'published', null, $this->googlecode->published); ?>
+						<?php echo JHTML::_('select.booleanlist', 'published', null, $this->pagecode->published); ?>
 					</td>
 				</tr>
 				<tr>
@@ -72,7 +72,7 @@ JHTML::_('behavior.formvalidation');
 						</label>
 					</td>
 					<td>
-						<?php echo JHTML::calendar($this->googlecode->publish_up, 'publish_up', 'publish_up', $format = '%Y-%m-%d %H:%M:%S', $attribs = null) ?>
+						<?php echo JHTML::calendar($this->pagecode->publish_up, 'publish_up', 'publish_up', $format = '%Y-%m-%d %H:%M:%S', $attribs = null) ?>
 					</td>
 				</tr>
 				<tr>
@@ -82,7 +82,7 @@ JHTML::_('behavior.formvalidation');
 						</label>
 					</td>
 					<td>
-						<?php echo JHTML::calendar($this->googlecode->publish_down, 'publish_down', 'publish_down', $format = '%Y-%m-%d %H:%M:%S', $attribs = null) ?>
+						<?php echo JHTML::calendar($this->pagecode->publish_down, 'publish_down', 'publish_down', $format = '%Y-%m-%d %H:%M:%S', $attribs = null) ?>
 					</td>
 				</tr>
 			</table>
@@ -91,8 +91,8 @@ JHTML::_('behavior.formvalidation');
 
 	<div class="clr"></div>
 
-	<input type="hidden" name="option" value="com_googlecodemanager" />
-	<input type="hidden" name="id" value="<?php echo $this->googlecode->id; ?>" />
+	<input type="hidden" name="option" value="com_pagecodemanager" />
+	<input type="hidden" name="id" value="<?php echo $this->pagecode->id; ?>" />
 	<input type="hidden" name="task" value="" />
-	<input type="hidden" name="controller" value="googlecode" />
+	<input type="hidden" name="controller" value="pagecode" />
 </form>
