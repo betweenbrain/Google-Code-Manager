@@ -8,5 +8,28 @@
  * Copyright  Copyright (C) 2013 betweenbrain llc. All Rights Reserved.
  * License    GNU GPL v3 or later
  */
- 
- 
+
+jimport('joomla.application.component.view');
+
+class PagecodesViewPagecodetypes extends JView
+{
+	/**
+	 * Page codes view display method
+	 *
+	 * @return void
+	 **/
+	function display($tpl = null)
+	{
+		JToolBarHelper::title(JText::_('Page Code Types'), 'generic.png');
+		JToolBarHelper::deleteList();
+		JToolBarHelper::editListX();
+		JToolBarHelper::addNewX();
+
+		// Get data from the model
+		$items =& $this->get('Data');
+
+		$this->assignRef('items', $items);
+
+		parent::display($tpl);
+	}
+}

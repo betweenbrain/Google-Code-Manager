@@ -21,10 +21,10 @@
 		<!-- Administration Menu Section -->
 		<menu>Page Code Manager</menu>
 		<submenu>
-		<menu link="option=com_pagecodemanager">Page Codes</menu>
-		<menu link="option=com_pagecodemanager&amp;controller=pagecode&amp;task=edit">Add New Page Code</menu>
-		<menu link="option=com_pagecodemanager">Page Code Types</menu>
-		<menu link="option=com_pagecodemanager">Add New Page Code Type</menu>
+			<menu link="option=com_pagecodemanager">Pages</menu>
+			<menu link="option=com_pagecodemanager&amp;controller=pagecode&amp;task=edit">Add New Page</menu>
+			<menu link="option=com_pagecodemanager&amp;controller=pagecodetypes">Codes</menu>
+			<menu link="option=com_pagecodemanager&amp;controller=pagecodetype&amp;task=edit">Add New Code</menu>
 		</submenu>
 
 		<!-- Administration Main File Copy Section -->
@@ -34,13 +34,22 @@
 			<filename>install.sql</filename>
 			<filename>uninstall.sql</filename>
 			<filename>controllers/pagecode.php</filename>
+			<filename>controllers/pagecodetype.php</filename>
+			<filename>controllers/pagecodetypes.php</filename>
 			<filename>models/pagecode.php</filename>
 			<filename>models/pagecodes.php</filename>
+			<filename>models/pagecodetype.php</filename>
+			<filename>models/pagecodetypes.php</filename>
 			<filename>tables/pagecode.php</filename>
+			<filename>tables/pagecodetype.php</filename>
 			<filename>views/pagecode/view.html.php</filename>
 			<filename>views/pagecode/tmpl/form.php</filename>
 			<filename>views/pagecodes/view.html.php</filename>
 			<filename>views/pagecodes/tmpl/default.php</filename>
+			<filename>views/pagecodetype/view.html.php</filename>
+			<filename>views/pagecodetype/tmpl/form.php</filename>
+			<filename>views/pagecodetypes/view.html.php</filename>
+			<filename>views/pagecodetypes/tmpl/default.php</filename>
 		</files>
 
 	</administration>
