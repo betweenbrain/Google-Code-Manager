@@ -26,7 +26,7 @@ class TablePagecode extends JTable
 	/**
 	 * @var string
 	 */
-	var $code = null;
+	var $typeId = null;
 
 	/**
 	 * @var string

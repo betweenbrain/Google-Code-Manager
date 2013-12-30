@@ -23,7 +23,7 @@ JHTML::_('behavior.formvalidation');
 		if (form.url.value == "") {
 			alert("<?php echo JText::_( 'You must provide a URL.', true ); ?>");
 		}
-		else if (form.code.value == "") {
+		else if (form.typeId.value == "") {
 			alert("<?php echo JText::_( 'You must provide a code.', true ); ?>");
 		} else {
 			submitform(pressbutton);
@@ -52,7 +52,7 @@ JHTML::_('behavior.formvalidation');
 						</label>
 					</td>
 					<td>
-						<input class="text_area required" type="text" name="code" id="code" size="32" maxlength="250" value="<?php echo $this->pagecode->code; ?>" />
+						<input class="text_area required" type="text" name="typeId" id="typeId" size="32" maxlength="250" value="<?php echo $this->pagecode->typeId; ?>" />
 					</td>
 				</tr>
 				<tr>

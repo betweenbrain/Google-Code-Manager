@@ -21,9 +21,10 @@
 		<!-- Administration Menu Section -->
 		<menu>Page Code Manager</menu>
 		<submenu>
-		<menu link="option=com_pagecodemanager">URL List</menu>
-		<menu link="option=com_pagecodemanager&amp;controller=pagecode&amp;task=edit">Add New URL</menu>
-		<menu link="option=com_pagecodemanager">Codes</menu>
+		<menu link="option=com_pagecodemanager">Page Codes</menu>
+		<menu link="option=com_pagecodemanager&amp;controller=pagecode&amp;task=edit">Add New Page Code</menu>
+		<menu link="option=com_pagecodemanager">Page Code Types</menu>
+		<menu link="option=com_pagecodemanager">Add New Page Code Type</menu>
 		</submenu>
 
 		<!-- Administration Main File Copy Section -->
