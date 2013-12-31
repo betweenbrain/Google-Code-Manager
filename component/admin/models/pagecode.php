@@ -92,7 +92,7 @@ class PagecodesModelPagecode extends JModel
 			$query = ' SELECT id as value, name as text ' .
 				' FROM #__page_code_types ' .
 				' ORDER BY name' .
-				'AND published = 1';
+				' AND published = 1';
 			$this->_db->setQuery($query);
 			$this->_types = $this->_db->loadAssocList();
 		}
