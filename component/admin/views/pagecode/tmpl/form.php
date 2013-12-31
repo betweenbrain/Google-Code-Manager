@@ -52,7 +52,7 @@ JHTML::_('behavior.formvalidation');
 						</label>
 					</td>
 					<td>
-						<input class="text_area required" type="text" name="typeId" id="typeId" size="32" maxlength="250" value="<?php echo $this->pagecode->typeId; ?>" />
+						<?php echo $this->selectType; ?>
 					</td>
 				</tr>
 				<tr>

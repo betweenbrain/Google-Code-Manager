@@ -21,11 +21,11 @@ class PagecodesViewPagecode extends JView
 	function display($tpl = null)
 	{
 
-		$pagecode =& $this->get('Data');
-		$isNew      = ($pagecode->id < 1);
+		$pagecode = $this->get('Data');
+		$isNew    = ($pagecode->id < 1);
 
 		$text = $isNew ? JText::_('New') : JText::_('Edit');
-		JToolBarHelper::title(JText::_('Page code') . ': <small><small>[ ' . $text . ' ]</small></small>');
+		JToolBarHelper::title(JText::_('Page Code') . ': <small><small>[ ' . $text . ' ]</small></small>');
 		JToolBarHelper::save();
 		if ($isNew)
 		{
@@ -38,6 +38,8 @@ class PagecodesViewPagecode extends JView
 		}
 
 		$this->assignRef('pagecode', $pagecode);
+
+		$this->assignRef('selectType', JHTML::_('select.genericlist', $this->get('Types'), 'typeId', '', 'value', 'text', $pagecode->typeId));
 
 		parent::display($tpl);
 	}

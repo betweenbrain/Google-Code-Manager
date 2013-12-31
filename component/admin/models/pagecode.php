@@ -75,13 +75,29 @@ class PagecodesModelPagecode extends JModel
 			$this->_data               = new stdClass();
 			$this->_data->id           = 0;
 			$this->_data->url          = null;
-			$this->_data->typeId         = null;
+			$this->_data->typeId       = null;
 			$this->_data->published    = null;
 			$this->_data->publish_up   = null;
 			$this->_data->publish_down = null;
 		}
 
 		return $this->_data;
+	}
+
+	function getTypes()
+	{
+		if (empty($this->_types))
+		{
+
+			$query = ' SELECT id as value, name as text ' .
+				' FROM #__page_code_types ' .
+				' ORDER BY name' .
+				'AND published = 1';
+			$this->_db->setQuery($query);
+			$this->_types = $this->_db->loadAssocList();
+		}
+
+		return $this->_types;
 	}
 
 	/**
