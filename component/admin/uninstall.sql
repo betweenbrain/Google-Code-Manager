@@ -1,2 +1,2 @@
-DROP TABLE IF EXISTS `#__page_code_urls`;
-DROP TABLE IF EXISTS `#__page_code_types`;
+DROP TABLE IF EXISTS `#__page_code_pages`;
+DROP TABLE IF EXISTS `#__page_code_codes`;

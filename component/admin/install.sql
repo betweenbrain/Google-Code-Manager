@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS `#__page_code_urls` (
+CREATE TABLE IF NOT EXISTS `#__page_code_pages` (
 	`id`        INT(11) UNSIGNED NOT NULL AUTO_INCREMENT,
 	`url`       TEXT             NOT NULL,
 	`typeId`    TINYINT(1) DEFAULT '0',
@@ -9,7 +9,7 @@ CREATE TABLE IF NOT EXISTS `#__page_code_urls` (
 	AUTO_INCREMENT =0
 	DEFAULT CHARSET =utf8;
 
-CREATE TABLE IF NOT EXISTS `#__page_code_types` (
+CREATE TABLE IF NOT EXISTS `#__page_code_codes` (
 	`id`           INT(11) UNSIGNED NOT NULL AUTO_INCREMENT,
 	`name`         TEXT             NOT NULL,
 	`code`         MEDIUMTEXT       NOT NULL,
