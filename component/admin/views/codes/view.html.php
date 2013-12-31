@@ -20,7 +20,7 @@ class PagesViewCodes extends JView
 	 **/
 	function display($tpl = null)
 	{
-		JToolBarHelper::title(JText::_('Page Code Types'), 'generic.png');
+		JToolBarHelper::title(JText::_('COM_PAGE_CODE_MANAGER') . ': ' . JText::_('COM_PAGE_CODE_MANAGER_CODES'), 'generic.png');
 		JToolBarHelper::deleteList();
 		JToolBarHelper::editListX();
 		JToolBarHelper::addNewX();

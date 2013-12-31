@@ -21,10 +21,10 @@ JHTML::_('behavior.formvalidation');
 
 		// do field validation
 		if (form.url.value == "") {
-			alert("<?php echo JText::_( 'You must provide a URL.', true ); ?>");
+			alert("<?php echo JText::_( 'COM_PAGE_CODE_MANAGER_WARNING_URL', true ); ?>");
 		}
 		else if (form.typeId.value == "") {
-			alert("<?php echo JText::_( 'You must provide a code.', true ); ?>");
+			alert("<?php echo JText::_( 'COM_PAGE_CODE_MANAGER_WARNING_CODE', true ); ?>");
 		} else {
 			submitform(pressbutton);
 		}
@@ -33,7 +33,7 @@ JHTML::_('behavior.formvalidation');
 <form action="index.php" method="post" name="adminForm" id="adminForm" class="form-validate">
 	<div class="col100">
 		<fieldset class="adminform">
-			<legend><?php echo JText::_('Details'); ?></legend>
+			<legend><?php echo JText::_('COM_PAGE_CODE_MANAGER_DETAILS'); ?></legend>
 			<table class="admintable">
 				<tr>
 					<td width="100" align="right" class="key">
@@ -48,7 +48,7 @@ JHTML::_('behavior.formvalidation');
 				<tr>
 					<td width="100" align="right" class="key">
 						<label for="code">
-							<?php echo JText::_('Page Code'); ?>:
+							<?php echo JText::_('COM_PAGE_CODE_MANAGER_CODE'); ?>:
 						</label>
 					</td>
 					<td>

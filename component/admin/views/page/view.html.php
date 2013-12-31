@@ -23,8 +23,8 @@ class PagesViewPage extends JView
 
 		$page = $this->get('Data');
 		$isNew    = ($page->id < 1);
-		$text     = $isNew ? JText::_('New') : JText::_('Edit');
-		JToolBarHelper::title(JText::_('Page Code') . ': <small><small>[ ' . $text . ' ]</small></small>');
+		$text     = $isNew ? JText::_('COM_PAGE_CODE_MANAGER_NEW') : JText::_('COM_PAGE_CODE_MANAGER_EDIT');
+		JToolBarHelper::title(JText::_('COM_PAGE_CODE_MANAGER_PAGE') . ': <small><small>[ ' . $text . ' ]</small></small>');
 		JToolBarHelper::save();
 		if ($isNew)
 		{
@@ -33,7 +33,7 @@ class PagesViewPage extends JView
 		else
 		{
 			// for existing items the button is renamed `close`
-			JToolBarHelper::cancel('cancel', 'Close');
+			JToolBarHelper::cancel('cancel', 'COM_PAGE_CODE_MANAGER_CLOSE');
 		}
 
 		$this->assignRef('page', $page);
