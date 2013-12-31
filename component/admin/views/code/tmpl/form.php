@@ -48,7 +48,7 @@ JHTML::_('behavior.formvalidation');
 				<tr>
 					<td width="100" align="right" class="key">
 						<label for="code">
-							<?php echo JText::_('Code'); ?>:
+							<?php echo JText::_('COM_PAGE_CODE_MANAGER_CODE'); ?>:
 						</label>
 					</td>
 					<td>
@@ -78,7 +78,7 @@ JHTML::_('behavior.formvalidation');
 				<tr>
 					<td width="100" align="right" class="key">
 						<label for="code">
-							<?php echo JText::_('Published'); ?>:
+							<?php echo JText::_('COM_PAGE_CODE_MANAGER_PUBLISHED'); ?>:
 						</label>
 					</td>
 					<td>

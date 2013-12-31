@@ -3,8 +3,8 @@
          version="1.5"
          method="upgrade">
 	<name>Page Code Manager</name>
-	<version>1.01</version>
-	<description>Description of the component ...</description>
+	<version>1.0.1</version>
+	<description>A simple admin only component for managing codes and the pages they are associated with.</description>
 
 	<install>
 		<sql>
@@ -18,6 +18,10 @@
 	</uninstall>
 
 	<administration>
+		<languages folder="admin">
+			<language tag="en-GB">language/en-GB/en-GB.com_pagecodemanager.ini</language>
+		</languages>
+
 		<!-- Administration Menu Section -->
 		<menu>Page Code Manager</menu>
 		<submenu>

@@ -19,16 +19,16 @@
 					       onclick="checkAll(<?php echo count($this->items); ?>);"/>
 				</th>
 				<th width="5">
-					<?php echo JText::_('ID'); ?>
+					<?php echo JText::_('COM_PAGE_CODE_MANAGER_ID'); ?>
 				</th>
 				<th>
-					<?php echo JText::_('URL'); ?>
+					<?php echo JText::_('COM_PAGE_CODE_MANAGER_URL'); ?>
 				</th>
 				<th>
-					<?php echo JText::_('Code'); ?>
+					<?php echo JText::_('COM_PAGE_CODE_MANAGER_CODE'); ?>
 				</th>
 				<th width="62">
-					<?php echo JText::_('Published'); ?>
+					<?php echo JText::_('COM_PAGE_CODE_MANAGER_PUBLISHED'); ?>
 				</th>
 			</tr>
 			</thead>
