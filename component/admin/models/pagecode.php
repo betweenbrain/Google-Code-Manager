@@ -84,6 +84,11 @@ class PagecodesModelPagecode extends JModel
 		return $this->_data;
 	}
 
+	/**
+	 * Returns array of code types for populating generic select list
+	 *
+	 * @return mixed
+	 */
 	function getTypes()
 	{
 		if (empty($this->_types))
