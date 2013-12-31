@@ -72,10 +72,12 @@ class PagecodesModelPagecodetype extends JModel
 		}
 		if (!$this->_data)
 		{
-			$this->_data            = new stdClass();
-			$this->_data->id        = 0;
-			$this->_data->name      = null;
-			$this->_data->published = null;
+			$this->_data               = new stdClass();
+			$this->_data->id           = 0;
+			$this->_data->name         = null;
+			$this->_data->published    = null;
+			$this->_data->publish_up   = null;
+			$this->_data->publish_down = null;
 		}
 
 		return $this->_data;

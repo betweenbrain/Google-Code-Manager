@@ -30,12 +30,6 @@
 				<th width="62">
 					<?php echo JText::_('Published'); ?>
 				</th>
-				<th>
-					<?php echo JText::_('Start Date'); ?>
-				</th>
-				<th>
-					<?php echo JText::_('End Date'); ?>
-				</th>
 			</tr>
 			</thead>
 			<?php
@@ -64,12 +58,6 @@
 					</td>
 					<td>
 						<?php echo JHtml::_('grid.published', $row, $i); ?>
-					</td>
-					<td>
-						<?php echo $row->publish_up; ?>
-					</td>
-					<td>
-						<?php echo $row->publish_down; ?>
 					</td>
 				</tr>
 				<?php

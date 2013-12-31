@@ -65,26 +65,6 @@ JHTML::_('behavior.formvalidation');
 						<?php echo JHTML::_('select.booleanlist', 'published', null, $this->pagecode->published); ?>
 					</td>
 				</tr>
-				<tr>
-					<td width="100" align="right" class="key">
-						<label for="publish_up">
-							<?php echo JText::_('Start Date'); ?>:
-						</label>
-					</td>
-					<td>
-						<?php echo JHTML::calendar($this->pagecode->publish_up, 'publish_up', 'publish_up', $format = '%Y-%m-%d %H:%M:%S', $attribs = null) ?>
-					</td>
-				</tr>
-				<tr>
-					<td width="100" align="right" class="key">
-						<label for="publish_down">
-							<?php echo JText::_('End Date'); ?>:
-						</label>
-					</td>
-					<td>
-						<?php echo JHTML::calendar($this->pagecode->publish_down, 'publish_down', 'publish_down', $format = '%Y-%m-%d %H:%M:%S', $attribs = null) ?>
-					</td>
-				</tr>
 			</table>
 		</fieldset>
 	</div>

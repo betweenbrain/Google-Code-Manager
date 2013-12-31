@@ -57,6 +57,26 @@ JHTML::_('behavior.formvalidation');
 				</tr>
 				<tr>
 					<td width="100" align="right" class="key">
+						<label for="publish_up">
+							<?php echo JText::_('Start Date'); ?>:
+						</label>
+					</td>
+					<td>
+						<?php echo JHTML::calendar($this->pagecodetype->publish_up, 'publish_up', 'publish_up', $format = '%Y-%m-%d %H:%M:%S', $attribs = null) ?>
+					</td>
+				</tr>
+				<tr>
+					<td width="100" align="right" class="key">
+						<label for="publish_down">
+							<?php echo JText::_('End Date'); ?>:
+						</label>
+					</td>
+					<td>
+						<?php echo JHTML::calendar($this->pagecodetype->publish_down, 'publish_down', 'publish_down', $format = '%Y-%m-%d %H:%M:%S', $attribs = null) ?>
+					</td>
+				</tr>
+				<tr>
+					<td width="100" align="right" class="key">
 						<label for="code">
 							<?php echo JText::_('Published'); ?>:
 						</label>

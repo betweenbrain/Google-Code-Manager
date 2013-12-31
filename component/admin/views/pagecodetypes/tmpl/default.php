@@ -27,6 +27,12 @@
 				<th>
 					<?php echo JText::_('Code'); ?>
 				</th>
+				<th>
+					<?php echo JText::_('Start Date'); ?>
+				</th>
+				<th>
+					<?php echo JText::_('End Date'); ?>
+				</th>
 				<th width="62">
 					<?php echo JText::_('Published'); ?>
 				</th>
@@ -57,6 +63,12 @@
 						<?php echo $row->code; ?>
 					</td>
 					<td>
+						<?php echo $row->publish_up; ?>
+					</td>
+					<td>
+						<?php echo $row->publish_down; ?>
+					</td>
+					<td>
 						<?php echo JHtml::_('grid.published', $row, $i); ?>
 					</td>
 				</tr>
@@ -66,7 +78,6 @@
 			?>
 		</table>
 	</div>
-
 	<input type="hidden" name="option" value="com_pagecodemanager" />
 	<input type="hidden" name="task" value="" />
 	<input type="hidden" name="boxchecked" value="0" />

@@ -77,8 +77,6 @@ class PagecodesModelPagecode extends JModel
 			$this->_data->url          = null;
 			$this->_data->typeId       = null;
 			$this->_data->published    = null;
-			$this->_data->publish_up   = null;
-			$this->_data->publish_down = null;
 		}
 
 		return $this->_data;

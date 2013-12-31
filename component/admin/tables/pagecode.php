@@ -34,16 +34,6 @@ class TablePagecode extends JTable
 	var $published = 0;
 
 	/**
-	 * @var string
-	 */
-	var $publish_up = null;
-
-	/**
-	 * @var string
-	 */
-	var $publish_down = null;
-
-	/**
 	 * Constructor
 	 *
 	 * @param object Database connector object
