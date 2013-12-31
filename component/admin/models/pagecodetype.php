@@ -74,7 +74,7 @@ class PagecodesModelPagecodetype extends JModel
 		{
 			$this->_data            = new stdClass();
 			$this->_data->id        = 0;
-			$this->_data->type      = null;
+			$this->_data->name      = null;
 			$this->_data->published = null;
 		}
 

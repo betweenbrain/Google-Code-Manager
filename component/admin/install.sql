@@ -10,7 +10,7 @@ CREATE TABLE IF NOT EXISTS `#__page_code_urls` (
 
 CREATE TABLE IF NOT EXISTS `#__page_code_types` (
   `id` int(11) unsigned NOT NULL auto_increment,
-  `type` text NOT NULL,
+  `name` text NOT NULL,
   `code` mediumtext NOT NULL,
   `published` tinyint(1) DEFAULT '0',
   PRIMARY KEY  (`id`)

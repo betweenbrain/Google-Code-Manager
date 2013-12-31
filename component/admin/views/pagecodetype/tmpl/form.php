@@ -20,7 +20,7 @@ JHTML::_('behavior.formvalidation');
 		}
 
 		// do field validation
-		if (form.type.value == "") {
+		if (form.name.value == "") {
 			alert("<?php echo JText::_( 'You must provide a name for this code type.', true ); ?>");
 		}
 		else if (form.code.value == "") {
@@ -38,11 +38,11 @@ JHTML::_('behavior.formvalidation');
 				<tr>
 					<td width="100" align="right" class="key">
 						<label for="url">
-							<?php echo JText::_('Type'); ?>:
+							<?php echo JText::_('Name'); ?>:
 						</label>
 					</td>
 					<td>
-						<input class="text_area required" type="text" name="type" id="type" size="96" maxlength="250" value="<?php echo $this->pagecodetype->type; ?>" />
+						<input class="text_area required" type="text" name="name" size="96" maxlength="250" value="<?php echo $this->pagecodetype->name; ?>" />
 					</td>
 				</tr>
 				<tr>
@@ -52,7 +52,7 @@ JHTML::_('behavior.formvalidation');
 						</label>
 					</td>
 					<td>
-						<textarea class="text_area required" name="code" id="code"><?php echo $this->pagecodetype->code; ?></textarea>
+						<textarea class="text_area required" name="code" rows="15" cols="55"><?php echo $this->pagecodetype->code; ?></textarea>
 					</td>
 				</tr>
 				<tr>

@@ -21,9 +21,9 @@
 		<!-- Administration Menu Section -->
 		<menu>Page Code Manager</menu>
 		<submenu>
-			<menu link="option=com_pagecodemanager">Pages</menu>
+			<menu link="option=com_pagecodemanager">Manage Pages</menu>
 			<menu link="option=com_pagecodemanager&amp;controller=pagecode&amp;task=edit">Add Page</menu>
-			<menu link="option=com_pagecodemanager&amp;controller=pagecodetypes">Codes</menu>
+			<menu link="option=com_pagecodemanager&amp;controller=pagecodetypes">Manage Codes</menu>
 			<menu link="option=com_pagecodemanager&amp;controller=pagecodetype&amp;task=edit">Add Code</menu>
 		</submenu>
 

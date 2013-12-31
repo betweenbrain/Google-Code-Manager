@@ -22,7 +22,7 @@
 					<?php echo JText::_('ID'); ?>
 				</th>
 				<th>
-					<?php echo JText::_('Type'); ?>
+					<?php echo JText::_('Name'); ?>
 				</th>
 				<th>
 					<?php echo JText::_('Code'); ?>
@@ -50,7 +50,7 @@
 					</td>
 					<td>
 						<a href="<?php echo $link; ?>">
-							<?php echo $row->type; ?>
+							<?php echo $row->name; ?>
 						</a>
 					</td>
 					<td>
