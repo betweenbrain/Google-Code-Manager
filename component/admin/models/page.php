@@ -72,11 +72,11 @@ class PagesModelPage extends JModel
 		}
 		if (!$this->_data)
 		{
-			$this->_data               = new stdClass();
-			$this->_data->id           = 0;
-			$this->_data->url          = null;
-			$this->_data->codeId       = null;
-			$this->_data->published    = null;
+			$this->_data            = new stdClass();
+			$this->_data->id        = 0;
+			$this->_data->url       = null;
+			$this->_data->codeId    = null;
+			$this->_data->published = null;
 		}
 
 		return $this->_data;
@@ -131,7 +131,12 @@ class PagesModelPage extends JModel
 		$row =& $this->getTable();
 
 		// retrieve the data from the form
-		$data = JRequest::get('post');
+		$post = JRequest::get('post');
+
+		foreach ($post as $key => $value)
+		{
+			$data[$key] = trim($value);
+		}
 
 		/**
 		 * Bind the form fields to the Pages table

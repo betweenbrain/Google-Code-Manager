@@ -111,7 +111,12 @@ class PagesModelCode extends JModel
 		$row =& $this->getTable();
 
 		// retrieve the data from the form
-		$data = JRequest::get('post');
+		$post = JRequest::get('post');
+
+		foreach ($post as $key => $value)
+		{
+			$data[$key] = trim($value);
+		}
 
 		/**
 		 * Bind the form fields to the Page code typess table
