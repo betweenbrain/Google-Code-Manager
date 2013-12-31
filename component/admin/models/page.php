@@ -130,7 +130,7 @@ class PagesModelPage extends JModel
 		// retrieves a reference to our JTable object
 		$row =& $this->getTable();
 
-		// retrieve the data from the form
+		// retrieve the data from the form and trim whitespace from inputs
 		$post = JRequest::get('post');
 
 		foreach ($post as $key => $value)
