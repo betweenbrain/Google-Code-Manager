@@ -2,7 +2,7 @@
 
 /**
  * File       form.php
- * Created    12/30/13 4:17 PM
+ * Created    12/26/13 3:54 PM
  * Author     Matt Thomas | matt@betweenbrain.com | http://betweenbrain.com
  * Support    https://github.com/betweenbrain/
  * Copyright  Copyright (C) 2013 betweenbrain llc. All Rights Reserved.
@@ -20,10 +20,10 @@ JHTML::_('behavior.formvalidation');
 		}
 
 		// do field validation
-		if (form.name.value == "") {
-			alert("<?php echo JText::_( 'You must provide a name for this code type.', true ); ?>");
+		if (form.url.value == "") {
+			alert("<?php echo JText::_( 'You must provide a URL.', true ); ?>");
 		}
-		else if (form.code.value == "") {
+		else if (form.typeId.value == "") {
 			alert("<?php echo JText::_( 'You must provide a code.', true ); ?>");
 		} else {
 			submitform(pressbutton);
@@ -38,41 +38,21 @@ JHTML::_('behavior.formvalidation');
 				<tr>
 					<td width="100" align="right" class="key">
 						<label for="url">
-							<?php echo JText::_('Name'); ?>:
+							<?php echo JText::_('URL'); ?>:
 						</label>
 					</td>
 					<td>
-						<input class="text_area required" type="text" name="name" size="96" maxlength="250" value="<?php echo $this->pagecodetype->name; ?>" />
+						<input class="text_area required" type="text" name="url" id="url" size="96" maxlength="250" value="<?php echo $this->page->url; ?>" />
 					</td>
 				</tr>
 				<tr>
 					<td width="100" align="right" class="key">
 						<label for="code">
-							<?php echo JText::_('Code'); ?>:
+							<?php echo JText::_('Page Code'); ?>:
 						</label>
 					</td>
 					<td>
-						<textarea class="text_area required" name="code" rows="15" cols="55"><?php echo $this->pagecodetype->code; ?></textarea>
-					</td>
-				</tr>
-				<tr>
-					<td width="100" align="right" class="key">
-						<label for="publish_up">
-							<?php echo JText::_('Start Date'); ?>:
-						</label>
-					</td>
-					<td>
-						<?php echo JHTML::calendar($this->pagecodetype->publish_up, 'publish_up', 'publish_up', $format = '%Y-%m-%d %H:%M:%S', $attribs = null) ?>
-					</td>
-				</tr>
-				<tr>
-					<td width="100" align="right" class="key">
-						<label for="publish_down">
-							<?php echo JText::_('End Date'); ?>:
-						</label>
-					</td>
-					<td>
-						<?php echo JHTML::calendar($this->pagecodetype->publish_down, 'publish_down', 'publish_down', $format = '%Y-%m-%d %H:%M:%S', $attribs = null) ?>
+						<?php echo $this->selectType; ?>
 					</td>
 				</tr>
 				<tr>
@@ -82,7 +62,7 @@ JHTML::_('behavior.formvalidation');
 						</label>
 					</td>
 					<td>
-						<?php echo JHTML::_('select.booleanlist', 'published', null, $this->pagecodetype->published); ?>
+						<?php echo JHTML::_('select.booleanlist', 'published', null, $this->page->published); ?>
 					</td>
 				</tr>
 			</table>
@@ -92,7 +72,7 @@ JHTML::_('behavior.formvalidation');
 	<div class="clr"></div>
 
 	<input type="hidden" name="option" value="com_pagecodemanager" />
-	<input type="hidden" name="id" value="<?php echo $this->pagecodetype->id; ?>" />
+	<input type="hidden" name="id" value="<?php echo $this->page->id; ?>" />
 	<input type="hidden" name="task" value="" />
-	<input type="hidden" name="controller" value="pagecodetype" />
+	<input type="hidden" name="controller" value="page" />
 </form>

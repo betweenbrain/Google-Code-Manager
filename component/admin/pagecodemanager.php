@@ -26,7 +26,7 @@ if ($controller = JRequest::getWord('controller'))
 }
 
 // Create the controller
-$classname  = 'PagecodesController' . $controller;
+$classname  = 'PagesController' . $controller;
 $controller = new $classname();
 
 // Perform the Request task

@@ -1,15 +1,15 @@
 <?php defined('_JEXEC') or die;
 
 /**
- * File       pagecodetpe.php
- * Created    12/30/13 4:18 PM
+ * File       page.php
+ * Created    12/26/13 3:56 PM
  * Author     Matt Thomas | matt@betweenbrain.com | http://betweenbrain.com
  * Support    https://github.com/betweenbrain/
  * Copyright  Copyright (C) 2013 betweenbrain llc. All Rights Reserved.
  * License    GNU GPL v3 or later
  */
 
-class PagecodesModelPagecodetype extends JModel
+class PagesModelPage extends JModel
 {
 
 	/**
@@ -52,7 +52,7 @@ class PagecodesModelPagecodetype extends JModel
 	}
 
 	/**
-	 * Method to get a Code type
+	 * Method to get a Page code
 	 *
 	 * if !$this->_data sets default state of new item
 	 * (e.g. $this->_data->published = 1 sets default published state)
@@ -65,7 +65,7 @@ class PagecodesModelPagecodetype extends JModel
 		// Load the data
 		if (empty($this->_data))
 		{
-			$query = ' SELECT * FROM #__page_code_codes ' .
+			$query = ' SELECT * FROM #__page_code_pages ' .
 				'  WHERE id = ' . $this->_id;
 			$this->_db->setQuery($query);
 			$this->_data = $this->_db->loadObject();
@@ -74,21 +74,41 @@ class PagecodesModelPagecodetype extends JModel
 		{
 			$this->_data               = new stdClass();
 			$this->_data->id           = 0;
-			$this->_data->name         = null;
+			$this->_data->url          = null;
+			$this->_data->typeId       = null;
 			$this->_data->published    = null;
-			$this->_data->publish_up   = null;
-			$this->_data->publish_down = null;
 		}
 
 		return $this->_data;
 	}
 
 	/**
-	 * Method to set the Code type identifier
+	 * Returns array of code types for populating generic select list
+	 *
+	 * @return mixed
+	 */
+	function getTypes()
+	{
+		if (empty($this->_types))
+		{
+
+			$query = ' SELECT id as value, name as text ' .
+				' FROM #__page_code_codes ' .
+				' ORDER BY name' .
+				' AND published = 1';
+			$this->_db->setQuery($query);
+			$this->_types = $this->_db->loadAssocList();
+		}
+
+		return $this->_types;
+	}
+
+	/**
+	 * Method to set the Page code identifier
 	 *
 	 * @access    public
 	 *
-	 * @param    int Code type identifier
+	 * @param    int Page code identifier
 	 *
 	 * @return    void
 	 */
@@ -114,7 +134,7 @@ class PagecodesModelPagecodetype extends JModel
 		$data = JRequest::get('post');
 
 		/**
-		 * Bind the form fields to the Page code typess table
+		 * Bind the form fields to the Pages table
 		 *
 		 * JTable/bind($from, $ignore=array());
 		 *
@@ -128,10 +148,10 @@ class PagecodesModelPagecodetype extends JModel
 		}
 
 		/**
-		 * Make sure the Code type record is valid
+		 * Make sure the Page code record is valid
 		 *
 		 * JTable/check();
-		 * can be overridden in our TablePagecodetype class
+		 * can be overridden in our TablePage class
 		 */
 		if (!$row->check())
 		{

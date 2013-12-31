@@ -31,21 +31,21 @@
 			<filename>pagecodemanager.php</filename>
 			<filename>install.sql</filename>
 			<filename>uninstall.sql</filename>
-			<filename>controllers/pagecode.php</filename>
-			<filename>controllers/pagecodetype.php</filename>
+			<filename>controllers/page.php</filename>
+			<filename>controllers/code.php</filename>
 			<filename>controllers/codes.php</filename>
-			<filename>models/pagecode.php</filename>
-			<filename>models/pagecodes.php</filename>
-			<filename>models/pagecodetype.php</filename>
+			<filename>models/page.php</filename>
+			<filename>models/pages.php</filename>
+			<filename>models/code.php</filename>
 			<filename>models/codes.php</filename>
-			<filename>tables/pagecode.php</filename>
-			<filename>tables/pagecodetype.php</filename>
-			<filename>views/pagecode/view.html.php</filename>
-			<filename>views/pagecode/tmpl/form.php</filename>
-			<filename>views/pagecodes/view.html.php</filename>
-			<filename>views/pagecodes/tmpl/default.php</filename>
-			<filename>views/pagecodetype/view.html.php</filename>
-			<filename>views/pagecodetype/tmpl/form.php</filename>
+			<filename>tables/page.php</filename>
+			<filename>tables/code.php</filename>
+			<filename>views/page/view.html.php</filename>
+			<filename>views/page/tmpl/form.php</filename>
+			<filename>views/pages/view.html.php</filename>
+			<filename>views/pages/tmpl/default.php</filename>
+			<filename>views/code/view.html.php</filename>
+			<filename>views/code/tmpl/form.php</filename>
 			<filename>views/codes/view.html.php</filename>
 			<filename>views/codes/tmpl/default.php</filename>
 		</files>

@@ -1,15 +1,15 @@
 <?php defined('_JEXEC') or die;
 
 /**
- * File       pagecode.php
- * Created    12/26/13 5:04 PM
+ * File       code.php
+ * Created    12/30/13 4:19 PM
  * Author     Matt Thomas | matt@betweenbrain.com | http://betweenbrain.com
  * Support    https://github.com/betweenbrain/
  * Copyright  Copyright (C) 2013 betweenbrain llc. All Rights Reserved.
  * License    GNU GPL v3 or later
  */
 
-class TablePagecode extends JTable
+class TableCode extends JTable
 {
 	/**
 	 * Primary Key
@@ -21,17 +21,27 @@ class TablePagecode extends JTable
 	/**
 	 * @var string
 	 */
-	var $url = null;
+	var $name = null;
 
 	/**
 	 * @var string
 	 */
-	var $typeId = null;
+	var $code = null;
 
 	/**
 	 * @var string
 	 */
 	var $published = 0;
+
+	/**
+	 * @var string
+	 */
+	var $publish_up = null;
+
+	/**
+	 * @var string
+	 */
+	var $publish_down = null;
 
 	/**
 	 * Constructor
@@ -40,6 +50,6 @@ class TablePagecode extends JTable
 	 */
 	function __construct(&$db)
 	{
-		parent::__construct('#__page_code_pages', 'id', $db);
+		parent::__construct('#__page_code_codes', 'id', $db);
 	}
 }

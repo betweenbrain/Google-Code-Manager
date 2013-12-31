@@ -9,7 +9,7 @@
  * License    GNU GPL v3 or later
  */
 
-class PagecodesControllerCodes extends PagecodesController
+class PagesControllerCodes extends PagesController
 {
 	/**
 	 * Method to display the view

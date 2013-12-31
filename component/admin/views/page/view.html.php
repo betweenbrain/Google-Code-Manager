@@ -2,7 +2,7 @@
 
 /**
  * File       view.html.php
- * Created    12/30/13 3:23 PM
+ * Created    12/26/13 3:54 PM
  * Author     Matt Thomas | matt@betweenbrain.com | http://betweenbrain.com
  * Support    https://github.com/betweenbrain/
  * Copyright  Copyright (C) 2013 betweenbrain llc. All Rights Reserved.
@@ -11,7 +11,7 @@
 
 jimport('joomla.application.component.view');
 
-class PagecodesViewPagecodetype extends JView
+class PagesViewPage extends JView
 {
 	/**
 	 * display method of Page code view
@@ -21,11 +21,10 @@ class PagecodesViewPagecodetype extends JView
 	function display($tpl = null)
 	{
 
-		$pagecodetype =& $this->get('Data');
-		$isNew        = ($pagecodetype->id < 1);
-
-		$text = $isNew ? JText::_('New') : JText::_('Edit');
-		JToolBarHelper::title(JText::_('Code Type') . ': <small><small>[ ' . $text . ' ]</small></small>');
+		$page = $this->get('Data');
+		$isNew    = ($page->id < 1);
+		$text     = $isNew ? JText::_('New') : JText::_('Edit');
+		JToolBarHelper::title(JText::_('Page Code') . ': <small><small>[ ' . $text . ' ]</small></small>');
 		JToolBarHelper::save();
 		if ($isNew)
 		{
@@ -37,7 +36,9 @@ class PagecodesViewPagecodetype extends JView
 			JToolBarHelper::cancel('cancel', 'Close');
 		}
 
-		$this->assignRef('pagecodetype', $pagecodetype);
+		$this->assignRef('page', $page);
+
+		$this->assignRef('selectType', JHTML::_('select.genericlist', $this->get('Types'), 'typeId', '', 'value', 'text', $page->typeId));
 
 		parent::display($tpl);
 	}

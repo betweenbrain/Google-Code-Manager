@@ -1,7 +1,7 @@
 <?php defined('_JEXEC') or die;
 
 /**
- * File       pagecodes.php
+ * File       codes.php
  * Created    12/26/13 4:31 PM
  * Author     Matt Thomas | matt@betweenbrain.com | http://betweenbrain.com
  * Support    https://github.com/betweenbrain/
@@ -11,7 +11,7 @@
 
 jimport('joomla.application.component.model');
 
-class PagecodesModelCodes extends JModel
+class PagesModelCodes extends JModel
 {
 	/**
 	 * Page code data array

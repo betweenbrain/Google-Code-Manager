@@ -1,7 +1,7 @@
 <?php defined('_JEXEC') or die;
 
 /**
- * File       pagecodetype.php
+ * File       code.php
  * Created    12/30/13 4:15 PM
  * Author     Matt Thomas | matt@betweenbrain.com | http://betweenbrain.com
  * Support    https://github.com/betweenbrain/
@@ -9,7 +9,7 @@
  * License    GNU GPL v3 or later
  */
 
-class PagecodesControllerPagecodetype extends PagecodesController
+class PagesControllerCode extends PagesController
 {
 	/**
 	 * constructor (registers additional tasks to methods)
@@ -43,7 +43,7 @@ class PagecodesControllerPagecodetype extends PagecodesController
 	 */
 	function edit()
 	{
-		JRequest::setVar('view', 'pagecodetype');
+		JRequest::setVar('view', 'code');
 		JRequest::setVar('layout', 'form');
 		JRequest::setVar('hidemainmenu', 1);
 
@@ -93,7 +93,7 @@ class PagecodesControllerPagecodetype extends PagecodesController
 	 */
 	function remove()
 	{
-		$model = $this->getModel('pagecodetype');
+		$model = $this->getModel('code');
 		if (!$model->delete())
 		{
 			$msg = JText::_('Error: One or More Code Types Could not be Deleted');
@@ -113,7 +113,7 @@ class PagecodesControllerPagecodetype extends PagecodesController
 	 */
 	function save()
 	{
-		$model = $this->getModel('pagecodetype');
+		$model = $this->getModel('code');
 
 		if ($model->store())
 		{
