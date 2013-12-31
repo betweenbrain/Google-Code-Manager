@@ -16,7 +16,7 @@
 			<tr>
 				<th width="20">
 					<input type="checkbox" name="toggle" value=""
-						onclick="checkAll(<?php echo count($this->items); ?>);" />
+						onclick="checkAll(<?php echo count($this->items) +1 ?>)" />
 				</th>
 				<th width="5">
 					<?php echo JText::_('COM_PAGE_CODE_MANAGER_ID'); ?>
