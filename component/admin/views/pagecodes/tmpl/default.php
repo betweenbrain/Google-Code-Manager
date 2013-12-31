@@ -60,7 +60,7 @@
 						</a>
 					</td>
 					<td>
-						<?php echo $row->typeId; ?>
+						<?php echo $row->type; ?>
 					</td>
 					<td>
 						<?php echo JHtml::_('grid.published', $row, $i); ?>

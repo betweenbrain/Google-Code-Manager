@@ -27,8 +27,11 @@ class PagecodesModelPagecodes extends JModel
 	 */
 	function _buildQuery()
 	{
-		$query = ' SELECT * '
-			. ' FROM #__page_code_urls ';
+		$query = ' SELECT urls.id as id, urls.url as url, urls.published as published, urls.publish_up as publish_up, urls.publish_down as publish_down, types.name as type'
+			. ' FROM #__page_code_urls as urls'
+			. ' LEFT JOIN #__page_code_types as types'
+			. ' ON types.id = urls.typeId'
+			. ' AND urls.published = 1';
 
 		return $query;
 	}
