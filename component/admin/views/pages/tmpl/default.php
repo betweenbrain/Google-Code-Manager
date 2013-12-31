@@ -56,7 +56,7 @@
 					<td>
 						<?php echo $row->type; ?>
 					</td>
-					<td>
+					<td align="center">
 						<?php echo JHtml::_('grid.published', $row, $i); ?>
 					</td>
 				</tr>

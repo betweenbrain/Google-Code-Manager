@@ -27,10 +27,10 @@
 				<th>
 					<?php echo JText::_('Code'); ?>
 				</th>
-				<th>
+				<th width="150">
 					<?php echo JText::_('Start Date'); ?>
 				</th>
-				<th>
+				<th width="150">
 					<?php echo JText::_('End Date'); ?>
 				</th>
 				<th width="62">
@@ -62,13 +62,13 @@
 					<td>
 						<?php echo $row->code; ?>
 					</td>
-					<td>
+					<td align="center">
 						<?php echo $row->publish_up; ?>
 					</td>
-					<td>
+					<td align="center">
 						<?php echo $row->publish_down; ?>
 					</td>
-					<td>
+					<td align="center">
 						<?php echo JHtml::_('grid.published', $row, $i); ?>
 					</td>
 				</tr>
