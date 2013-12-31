@@ -42,7 +42,7 @@ JHTML::_('behavior.formvalidation');
 						</label>
 					</td>
 					<td>
-						<input class="text_area required" type="text" name="type" id="type" size="96" maxlength="250" value="<?php echo $this->codetype->type; ?>" />
+						<input class="text_area required" type="text" name="type" id="type" size="96" maxlength="250" value="<?php echo $this->pagecodetype->type; ?>" />
 					</td>
 				</tr>
 				<tr>
@@ -52,7 +52,7 @@ JHTML::_('behavior.formvalidation');
 						</label>
 					</td>
 					<td>
-						<input class="text_area required" type="text" name="code" id="code" size="32" maxlength="250" value="<?php echo $this->codetype->code; ?>" />
+						<textarea class="text_area required" name="code" id="code"><?php echo $this->pagecodetype->code; ?></textarea>
 					</td>
 				</tr>
 				<tr>
@@ -62,7 +62,7 @@ JHTML::_('behavior.formvalidation');
 						</label>
 					</td>
 					<td>
-						<?php echo JHTML::_('select.booleanlist', 'published', null, $this->codetype->published); ?>
+						<?php echo JHTML::_('select.booleanlist', 'published', null, $this->pagecodetype->published); ?>
 					</td>
 				</tr>
 			</table>
@@ -72,7 +72,7 @@ JHTML::_('behavior.formvalidation');
 	<div class="clr"></div>
 
 	<input type="hidden" name="option" value="com_pagecodemanager" />
-	<input type="hidden" name="id" value="<?php echo $this->codetype->id; ?>" />
+	<input type="hidden" name="id" value="<?php echo $this->pagecodetype->id; ?>" />
 	<input type="hidden" name="task" value="" />
 	<input type="hidden" name="controller" value="pagecodetype" />
 </form>
