@@ -23,8 +23,7 @@ class PagecodesViewPagecode extends JView
 
 		$pagecode = $this->get('Data');
 		$isNew    = ($pagecode->id < 1);
-
-		$text = $isNew ? JText::_('New') : JText::_('Edit');
+		$text     = $isNew ? JText::_('New') : JText::_('Edit');
 		JToolBarHelper::title(JText::_('Page Code') . ': <small><small>[ ' . $text . ' ]</small></small>');
 		JToolBarHelper::save();
 		if ($isNew)
