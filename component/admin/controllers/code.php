@@ -32,7 +32,7 @@ class PagesControllerCode extends PagesController
 	 */
 	function cancel()
 	{
-		$msg = JText::_('Operation Cancelled');
+		$msg = JText::_('COM_PAGE_CODE_MANAGER_MESSAGE_CANCELLED');
 		$this->setRedirect('index.php?option=com_pagecodemanager&controller=codes', $msg);
 	}
 
@@ -69,21 +69,23 @@ class PagesControllerCode extends PagesController
 
 		if (empty($cid))
 		{
-			return JError::raiseWarning(500, JText::_('No items selected'));
+			return JError::raiseWarning(500, JText::_('COM_PAGE_CODE_MANAGER_WARNING_NONE_SELECTED'));
 		}
 
 		JArrayHelper::toInteger($cid);
-		$cids = implode(',', $cid);
+		$cids  = implode(',', $cid);
 
 		$query = 'UPDATE #__page_code_codes'
 			. ' SET published = ' . (int) $publish
 			. ' WHERE id IN ( ' . $cids . '  )';
 		$db->setQuery($query);
+
 		if (!$db->query())
 		{
 			return JError::raiseWarning(500, $db->getError());
 		}
-		$this->setMessage(JText::sprintf($publish ? 'Items published' : 'Items unpublished', $n));
+
+		$this->setMessage(JText::sprintf($publish ? 'COM_PAGE_CODE_MANAGER_MESSAGE_CODES_PUBLISHED' : 'COM_PAGE_CODE_MANAGER_MESSAGE_CODES_UNPUBLISHED', $n));
 	}
 
 	/**
@@ -93,14 +95,17 @@ class PagesControllerCode extends PagesController
 	 */
 	function remove()
 	{
+		$cid   = JRequest::getVar('cid', array(), 'post', 'array');
+		$n     = count($cid);
 		$model = $this->getModel('code');
+
 		if (!$model->delete())
 		{
-			$msg = JText::_('Error: One or More Code Types Could not be Deleted');
+			$msg = JText::_('COM_PAGE_CODE_MANAGER_ERROR_CODE_DELETE');
 		}
 		else
 		{
-			$msg = JText::_('Code Type(s) Deleted');
+			$msg = JText::sprintf('COM_PAGE_CODE_MANAGER_MESSAGE_CODE_DELETED', $n);
 		}
 
 		$this->setRedirect('index.php?option=com_pagecodemanager&controller=codes', $msg);
@@ -117,11 +122,11 @@ class PagesControllerCode extends PagesController
 
 		if ($model->store())
 		{
-			$msg = JText::_('Code Type Saved');
+			$msg = JText::_('COM_PAGE_CODE_MANAGER_MESSAGE_CODE_SAVED');
 		}
 		else
 		{
-			$msg = JText::_('Error Saving Code Type');
+			$msg = JText::_('COM_PAGE_CODE_MANAGER_ERROR_CODE_SAVE');
 		}
 
 		// Check the table in so it can be edited.... we are done with it anyway

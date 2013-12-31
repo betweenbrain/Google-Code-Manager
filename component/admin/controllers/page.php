@@ -32,7 +32,7 @@ class PagesControllerPage extends PagesController
 	 */
 	function cancel()
 	{
-		$msg = JText::_('Operation Cancelled');
+		$msg = JText::_('COM_PAGE_CODE_MANAGER_MESSAGE_CANCELLED');
 		$this->setRedirect('index.php?option=com_pagecodemanager', $msg);
 	}
 
@@ -69,21 +69,23 @@ class PagesControllerPage extends PagesController
 
 		if (empty($cid))
 		{
-			return JError::raiseWarning(500, JText::_('No items selected'));
+			return JError::raiseWarning(500, JText::_('COM_PAGE_CODE_MANAGER_WARNING_NONE_SELECTED'));
 		}
 
 		JArrayHelper::toInteger($cid);
-		$cids = implode(',', $cid);
+		$cids  = implode(',', $cid);
 
 		$query = 'UPDATE #__page_code_pages'
 			. ' SET published = ' . (int) $publish
 			. ' WHERE id IN ( ' . $cids . '  )';
 		$db->setQuery($query);
+
 		if (!$db->query())
 		{
 			return JError::raiseWarning(500, $db->getError());
 		}
-		$this->setMessage(JText::sprintf($publish ? 'Items published' : 'Items unpublished', $n));
+
+		$this->setMessage(JText::sprintf($publish ? 'COM_PAGE_CODE_MANAGER_MESSAGE_PAGES_PUBLISHED' : 'COM_PAGE_CODE_MANAGER_MESSAGE_PAGES_UNPUBLISHED', $n));
 	}
 
 	/**
@@ -93,14 +95,17 @@ class PagesControllerPage extends PagesController
 	 */
 	function remove()
 	{
+		$cid   = JRequest::getVar('cid', array(), 'post', 'array');
+		$n     = count($cid);
 		$model = $this->getModel('page');
+
 		if (!$model->delete())
 		{
-			$msg = JText::_('Error: One or More Page Codes Could not be Deleted');
+			$msg = JText::_('COM_PAGE_CODE_MANAGER_ERROR_PAGE_DELETE');
 		}
 		else
 		{
-			$msg = JText::_('Page Code(s) Deleted');
+			$msg = JText::sprintf('COM_PAGE_CODE_MANAGER_MESSAGE_PAGE_DELETED', $n);
 		}
 
 		$this->setRedirect('index.php?option=com_pagecodemanager', $msg);
@@ -117,11 +122,11 @@ class PagesControllerPage extends PagesController
 
 		if ($model->store())
 		{
-			$msg = JText::_('Page Code Saved');
+			$msg = JText::_('COM_PAGE_CODE_MANAGER_MESSAGE_PAGE_SAVED');
 		}
 		else
 		{
-			$msg = JText::_('Error Saving Page Code');
+			$msg = JText::_('COM_PAGE_CODE_MANAGER_ERROR_PAGE_SAVE');
 		}
 
 		// Check the table in so it can be edited.... we are done with it anyway

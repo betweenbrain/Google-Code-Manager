@@ -21,10 +21,10 @@ JHTML::_('behavior.formvalidation');
 
 		// do field validation
 		if (form.name.value == "") {
-			alert("<?php echo JText::_( 'You must provide a name for this code type.', true ); ?>");
+			alert("<?php echo JText::_( 'COM_PAGE_CODE_MANAGER_WARNING_NAME', true ); ?>");
 		}
 		else if (form.code.value == "") {
-			alert("<?php echo JText::_( 'You must provide a code.', true ); ?>");
+			alert("<?php echo JText::_( 'COM_PAGE_CODE_MANAGER_WARNING_CODE', true ); ?>");
 		} else {
 			submitform(pressbutton);
 		}
@@ -33,12 +33,12 @@ JHTML::_('behavior.formvalidation');
 <form action="index.php" method="post" name="adminForm" id="adminForm" class="form-validate">
 	<div class="col100">
 		<fieldset class="adminform">
-			<legend><?php echo JText::_('Details'); ?></legend>
+			<legend><?php echo JText::_('COM_PAGE_CODE_MANAGER_DETAILS'); ?></legend>
 			<table class="admintable">
 				<tr>
 					<td width="100" align="right" class="key">
 						<label for="url">
-							<?php echo JText::_('Name'); ?>:
+							<?php echo JText::_('COM_PAGE_CODE_MANAGER_NAME'); ?>:
 						</label>
 					</td>
 					<td>
@@ -58,7 +58,7 @@ JHTML::_('behavior.formvalidation');
 				<tr>
 					<td width="100" align="right" class="key">
 						<label for="publish_up">
-							<?php echo JText::_('Start Date'); ?>:
+							<?php echo JText::_('COM_PAGE_CODE_MANAGER_DATE_START'); ?>:
 						</label>
 					</td>
 					<td>
@@ -68,7 +68,7 @@ JHTML::_('behavior.formvalidation');
 				<tr>
 					<td width="100" align="right" class="key">
 						<label for="publish_down">
-							<?php echo JText::_('End Date'); ?>:
+							<?php echo JText::_('COM_PAGE_CODE_MANAGER_DATE_END'); ?>:
 						</label>
 					</td>
 					<td>

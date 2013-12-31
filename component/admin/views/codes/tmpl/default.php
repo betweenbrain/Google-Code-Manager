@@ -22,16 +22,16 @@
 					<?php echo JText::_('COM_PAGE_CODE_MANAGER_ID'); ?>
 				</th>
 				<th>
-					<?php echo JText::_('Name'); ?>
+					<?php echo JText::_('COM_PAGE_CODE_MANAGER_NAME'); ?>
 				</th>
 				<th>
 					<?php echo JText::_('COM_PAGE_CODE_MANAGER_CODE'); ?>
 				</th>
 				<th width="150">
-					<?php echo JText::_('Start Date'); ?>
+					<?php echo JText::_('COM_PAGE_CODE_MANAGER_DATE_START'); ?>
 				</th>
 				<th width="150">
-					<?php echo JText::_('End Date'); ?>
+					<?php echo JText::_('COM_PAGE_CODE_MANAGER_DATE_END'); ?>
 				</th>
 				<th width="62">
 					<?php echo JText::_('COM_PAGE_CODE_MANAGER_PUBLISHED'); ?>

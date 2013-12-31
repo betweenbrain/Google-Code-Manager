@@ -21,9 +21,9 @@ class PagesViewPage extends JView
 	function display($tpl = null)
 	{
 
-		$page = $this->get('Data');
-		$isNew    = ($page->id < 1);
-		$text     = $isNew ? JText::_('COM_PAGE_CODE_MANAGER_NEW') : JText::_('COM_PAGE_CODE_MANAGER_EDIT');
+		$page  = $this->get('Data');
+		$isNew = ($page->id < 1);
+		$text  = $isNew ? JText::_('COM_PAGE_CODE_MANAGER_NEW') : JText::_('COM_PAGE_CODE_MANAGER_EDIT');
 		JToolBarHelper::title(JText::_('COM_PAGE_CODE_MANAGER_PAGE') . ': <small><small>[ ' . $text . ' ]</small></small>');
 		JToolBarHelper::save();
 		if ($isNew)

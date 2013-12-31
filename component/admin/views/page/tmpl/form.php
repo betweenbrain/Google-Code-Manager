@@ -24,7 +24,7 @@ JHTML::_('behavior.formvalidation');
 			alert("<?php echo JText::_( 'COM_PAGE_CODE_MANAGER_WARNING_URL', true ); ?>");
 		}
 		else if (form.codeId.value == "") {
-			alert("<?php echo JText::_( 'COM_PAGE_CODE_MANAGER_WARNING_CODE', true ); ?>");
+			alert("<?php echo JText::_( 'COM_PAGE_CODE_MANAGER_WARNING_SELECT_CODE', true ); ?>");
 		} else {
 			submitform(pressbutton);
 		}
