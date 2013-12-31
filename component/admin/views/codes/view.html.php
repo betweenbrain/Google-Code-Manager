@@ -11,7 +11,7 @@
 
 jimport('joomla.application.component.view');
 
-class PagecodesViewPagecodetypes extends JView
+class PagecodesViewCodes extends JView
 {
 	/**
 	 * Page codes view display method

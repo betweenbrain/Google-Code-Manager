@@ -1,7 +1,7 @@
 <?php defined('_JEXEC') or die;
 
 /**
- * File       pagecodetypes.php
+ * File       codes.php
  * Created    12/30/13 3:12 PM
  * Author     Matt Thomas | matt@betweenbrain.com | http://betweenbrain.com
  * Support    https://github.com/betweenbrain/
@@ -9,7 +9,7 @@
  * License    GNU GPL v3 or later
  */
 
-class PagecodesControllerPagecodetypes extends PagecodesController
+class PagecodesControllerCodes extends PagecodesController
 {
 	/**
 	 * Method to display the view
@@ -18,7 +18,7 @@ class PagecodesControllerPagecodetypes extends PagecodesController
 	 */
 	function display()
 	{
-		JRequest::setVar('view', 'pagecodetypes');
+		JRequest::setVar('view', 'codes');
 		JRequest::setVar('hidemainmenu', 0);
 		parent::display();
 	}

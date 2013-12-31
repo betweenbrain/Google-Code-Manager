@@ -65,7 +65,7 @@ class PagecodesModelPagecodetype extends JModel
 		// Load the data
 		if (empty($this->_data))
 		{
-			$query = ' SELECT * FROM #__page_code_types ' .
+			$query = ' SELECT * FROM #__page_code_codes ' .
 				'  WHERE id = ' . $this->_id;
 			$this->_db->setQuery($query);
 			$this->_data = $this->_db->loadObject();

@@ -27,10 +27,10 @@ class PagecodesModelPagecodes extends JModel
 	 */
 	function _buildQuery()
 	{
-		$query = ' SELECT urls.id as id, urls.url as url, urls.published as published, types.name as type'
-			. ' FROM #__page_code_urls as urls'
-			. ' LEFT JOIN #__page_code_types as types'
-			. ' ON types.id = urls.typeId';
+		$query = ' SELECT pages.id as id, pages.url as url, pages.published as published, codes.name as type'
+			. ' FROM #__page_code_pages as pages'
+			. ' LEFT JOIN #__page_code_codes as codes'
+			. ' ON codes.id = pages.typeId';
 
 		return $query;
 	}

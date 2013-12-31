@@ -40,6 +40,6 @@ class TablePagecode extends JTable
 	 */
 	function __construct(&$db)
 	{
-		parent::__construct('#__page_code_urls', 'id', $db);
+		parent::__construct('#__page_code_pages', 'id', $db);
 	}
 }

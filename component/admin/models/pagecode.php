@@ -65,7 +65,7 @@ class PagecodesModelPagecode extends JModel
 		// Load the data
 		if (empty($this->_data))
 		{
-			$query = ' SELECT * FROM #__page_code_urls ' .
+			$query = ' SELECT * FROM #__page_code_pages ' .
 				'  WHERE id = ' . $this->_id;
 			$this->_db->setQuery($query);
 			$this->_data = $this->_db->loadObject();
@@ -93,7 +93,7 @@ class PagecodesModelPagecode extends JModel
 		{
 
 			$query = ' SELECT id as value, name as text ' .
-				' FROM #__page_code_types ' .
+				' FROM #__page_code_codes ' .
 				' ORDER BY name' .
 				' AND published = 1';
 			$this->_db->setQuery($query);

@@ -11,7 +11,7 @@
 
 jimport('joomla.application.component.model');
 
-class PagecodesModelPagecodetypes extends JModel
+class PagecodesModelCodes extends JModel
 {
 	/**
 	 * Page code data array
@@ -28,7 +28,7 @@ class PagecodesModelPagecodetypes extends JModel
 	function _buildQuery()
 	{
 		$query = ' SELECT * '
-			. ' FROM #__page_code_types ';
+			. ' FROM #__page_code_codes';
 
 		return $query;
 	}

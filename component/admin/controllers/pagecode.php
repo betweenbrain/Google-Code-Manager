@@ -75,7 +75,7 @@ class PagecodesControllerPagecode extends PagecodesController
 		JArrayHelper::toInteger($cid);
 		$cids = implode(',', $cid);
 
-		$query = 'UPDATE #__page_code_urls'
+		$query = 'UPDATE #__page_code_pages'
 			. ' SET published = ' . (int) $publish
 			. ' WHERE id IN ( ' . $cids . '  )';
 		$db->setQuery($query);

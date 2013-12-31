@@ -33,7 +33,7 @@ class PagecodesControllerPagecodetype extends PagecodesController
 	function cancel()
 	{
 		$msg = JText::_('Operation Cancelled');
-		$this->setRedirect('index.php?option=com_pagecodemanager&controller=pagecodetypes', $msg);
+		$this->setRedirect('index.php?option=com_pagecodemanager&controller=codes', $msg);
 	}
 
 	/**
@@ -58,7 +58,7 @@ class PagecodesControllerPagecodetype extends PagecodesController
 		// Check for request forgeries
 		// JRequest::checkToken() or jexit( 'Invalid Token' );
 
-		$this->setRedirect('index.php?option=com_pagecodemanager&controller=pagecodetypes');
+		$this->setRedirect('index.php?option=com_pagecodemanager&controller=codes');
 
 		// Initialize variables
 		$db      =& JFactory::getDBO();
@@ -75,7 +75,7 @@ class PagecodesControllerPagecodetype extends PagecodesController
 		JArrayHelper::toInteger($cid);
 		$cids = implode(',', $cid);
 
-		$query = 'UPDATE #__page_code_types'
+		$query = 'UPDATE #__page_code_codes'
 			. ' SET published = ' . (int) $publish
 			. ' WHERE id IN ( ' . $cids . '  )';
 		$db->setQuery($query);
@@ -103,7 +103,7 @@ class PagecodesControllerPagecodetype extends PagecodesController
 			$msg = JText::_('Code Type(s) Deleted');
 		}
 
-		$this->setRedirect('index.php?option=com_pagecodemanager&controller=pagecodetypes', $msg);
+		$this->setRedirect('index.php?option=com_pagecodemanager&controller=codes', $msg);
 	}
 
 	/**
@@ -125,7 +125,7 @@ class PagecodesControllerPagecodetype extends PagecodesController
 		}
 
 		// Check the table in so it can be edited.... we are done with it anyway
-		$link = 'index.php?option=com_pagecodemanager&controller=pagecodetypes';
+		$link = 'index.php?option=com_pagecodemanager&controller=codes';
 		$this->setRedirect($link, $msg);
 	}
 }

@@ -22,7 +22,7 @@
 		<menu>Page Code Manager</menu>
 		<submenu>
 			<menu link="option=com_pagecodemanager">Pages</menu>
-			<menu link="option=com_pagecodemanager&amp;controller=pagecodetypes">Codes</menu>
+			<menu link="option=com_pagecodemanager&amp;controller=codes">Codes</menu>
 		</submenu>
 
 		<!-- Administration Main File Copy Section -->
@@ -33,11 +33,11 @@
 			<filename>uninstall.sql</filename>
 			<filename>controllers/pagecode.php</filename>
 			<filename>controllers/pagecodetype.php</filename>
-			<filename>controllers/pagecodetypes.php</filename>
+			<filename>controllers/codes.php</filename>
 			<filename>models/pagecode.php</filename>
 			<filename>models/pagecodes.php</filename>
 			<filename>models/pagecodetype.php</filename>
-			<filename>models/pagecodetypes.php</filename>
+			<filename>models/codes.php</filename>
 			<filename>tables/pagecode.php</filename>
 			<filename>tables/pagecodetype.php</filename>
 			<filename>views/pagecode/view.html.php</filename>
@@ -46,8 +46,8 @@
 			<filename>views/pagecodes/tmpl/default.php</filename>
 			<filename>views/pagecodetype/view.html.php</filename>
 			<filename>views/pagecodetype/tmpl/form.php</filename>
-			<filename>views/pagecodetypes/view.html.php</filename>
-			<filename>views/pagecodetypes/tmpl/default.php</filename>
+			<filename>views/codes/view.html.php</filename>
+			<filename>views/codes/tmpl/default.php</filename>
 		</files>
 
 	</administration>
