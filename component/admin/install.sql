@@ -1,7 +1,7 @@
 CREATE TABLE IF NOT EXISTS `#__page_code_pages` (
 	`id`        INT(11) UNSIGNED NOT NULL AUTO_INCREMENT,
 	`url`       TEXT             NOT NULL,
-	`typeId`    TINYINT(1) DEFAULT '0',
+	`codeId`    TINYINT(1) DEFAULT '0',
 	`published` TINYINT(1) DEFAULT '0',
 	PRIMARY KEY (`id`)
 )

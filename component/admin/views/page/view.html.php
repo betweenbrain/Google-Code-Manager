@@ -38,7 +38,7 @@ class PagesViewPage extends JView
 
 		$this->assignRef('page', $page);
 
-		$this->assignRef('selectType', JHTML::_('select.genericlist', $this->get('Types'), 'typeId', '', 'value', 'text', $page->typeId));
+		$this->assignRef('selectType', JHTML::_('select.genericlist', $this->get('Types'), 'codeId', '', 'value', 'text', $page->codeId));
 
 		parent::display($tpl);
 	}

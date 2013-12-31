@@ -26,7 +26,7 @@ class TablePage extends JTable
 	/**
 	 * @var string
 	 */
-	var $typeId = null;
+	var $codeId = null;
 
 	/**
 	 * @var string

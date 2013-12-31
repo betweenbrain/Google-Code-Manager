@@ -30,7 +30,7 @@ class PagesModelPages extends JModel
 		$query = ' SELECT pages.id as id, pages.url as url, pages.published as published, codes.name as type'
 			. ' FROM #__page_code_pages as pages'
 			. ' LEFT JOIN #__page_code_codes as codes'
-			. ' ON codes.id = pages.typeId';
+			. ' ON codes.id = pages.codeId';
 
 		return $query;
 	}

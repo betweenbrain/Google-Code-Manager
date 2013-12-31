@@ -23,7 +23,7 @@ JHTML::_('behavior.formvalidation');
 		if (form.url.value == "") {
 			alert("<?php echo JText::_( 'COM_PAGE_CODE_MANAGER_WARNING_URL', true ); ?>");
 		}
-		else if (form.typeId.value == "") {
+		else if (form.codeId.value == "") {
 			alert("<?php echo JText::_( 'COM_PAGE_CODE_MANAGER_WARNING_CODE', true ); ?>");
 		} else {
 			submitform(pressbutton);
