@@ -25,8 +25,8 @@
 		<!-- Administration Menu Section -->
 		<menu>Page Code Manager</menu>
 		<submenu>
-			<menu link="option=com_pagecodemanager&amp;controller=codes">Codes</menu>
-			<menu link="option=com_pagecodemanager">Pages</menu>
+			<menu link="option=com_pagecodemanager&amp;view=codes">Codes</menu>
+			<menu link="option=com_pagecodemanager&amp;view=pages">Pages</menu>
 		</submenu>
 
 		<!-- Administration Main File Copy Section -->

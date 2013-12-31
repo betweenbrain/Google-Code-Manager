@@ -33,7 +33,7 @@ class PagesControllerPage extends PagesController
 	function cancel()
 	{
 		$msg = JText::_('COM_PAGE_CODE_MANAGER_MESSAGE_CANCELLED');
-		$this->setRedirect('index.php?option=com_pagecodemanager', $msg);
+		$this->setRedirect('index.php?option=com_pagecodemanager&view=pages', $msg);
 	}
 
 	/**
@@ -58,7 +58,7 @@ class PagesControllerPage extends PagesController
 		// Check for request forgeries
 		// JRequest::checkToken() or jexit( 'Invalid Token' );
 
-		$this->setRedirect('index.php?option=com_pagecodemanager');
+		$this->setRedirect('index.php?option=com_pagecodemanager&view=pages');
 
 		// Initialize variables
 		$db      =& JFactory::getDBO();
@@ -108,7 +108,7 @@ class PagesControllerPage extends PagesController
 			$msg = JText::sprintf('COM_PAGE_CODE_MANAGER_MESSAGE_PAGE_DELETED', $n);
 		}
 
-		$this->setRedirect('index.php?option=com_pagecodemanager', $msg);
+		$this->setRedirect('index.php?option=com_pagecodemanager&view=pages', $msg);
 	}
 
 	/**
@@ -130,7 +130,7 @@ class PagesControllerPage extends PagesController
 		}
 
 		// Check the table in so it can be edited.... we are done with it anyway
-		$link = 'index.php?option=com_pagecodemanager';
+		$link = 'index.php?option=com_pagecodemanager&view=pages';
 		$this->setRedirect($link, $msg);
 	}
 }
